@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <meta name=viewport content="width=device-width, initial-scale=1">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBC1D21RJT"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-CBC1D21RJT');
+        </script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content:"Yonatan Bisk">
+        <link rel="canonical" href="https://yonatanbisk.com">
+        <title>11-767 On-Device Machine Learning</title>
+        <meta name="title" content="11-767 MMML">
+        <meta name="description" content="On-Device Machine Learning 11-767 - at CMU">
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://YonatanBisk.com/teaching">
+        <meta property="og:title" content:"Yonatan Bisk">
+        <meta property="og:image" content="https://yonatanbisk.com/images/cmu-logo.png">
+        <meta property="og:description" content="On-Device Machine Learning 11-767 - at CMU">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://YonatanBisk.com/teaching">
+        <meta property="twitter:title" content:"Yonatan Bisk">
+        <meta property="twitter:image" content="https://yonatanbisk.com/teaching/cmu-logo.png">
+        <meta property="twitter:description" content="On-Device Machine Learning 11-767- at CMU">
+
+        <link rel="stylesheet" href="https://yonatanbisk.com/main.css">
+        <link rel="icon" type="image/png" href="https://yonatanbisk.com/images/cmu-icon.png">
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-md navbar-dark" style="background-color:#429450">
+        <a class="navbar-brand" href="#"><img src="https://yonatanbisk.com/images/CLAW-BW.svg" class="d-inline-block" height=40 alt="small logo of a two fingered claw"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbars">
+          <div class="navbar-nav">
+           <a class="nav-item nav-link" href="https://yonatanbisk.com" style="font-size:2em">&nbsp;Home&nbsp; </a>
+           <a class="nav-item nav-link" href="https://yonatanbisk.com/group.html" style="font-size:2em">&nbsp;Lab&nbsp; <span class="sr-only">(current)</span></a>
+           <a class="nav-item nav-link" href="https://yonatanbisk.com/publications.html" style="font-size:2em">&nbsp;Publications&nbsp;</a>
+           <a class="nav-item nav-link" href="https://arxiv.org/abs/2004.10151" style="font-size:2em">&nbsp;EGL&nbsp;</a>
+           <a class="nav-item nav-link active" href="https://yonatanbisk.com/teaching" style="font-size:2em">&nbsp;Teaching&nbsp;</a>
+          </div>
+        </div>
+      </nav>
+
+        <div class="jumbotron">
+          <div class="container">
+              <center><h1>11-767: <b>O</b>n-<b>D</b>evice <b>M</b>achine <b>L</b>earning</h1></center>
+          </div>
+        </div>
+
+      <main role="main">
+          <center><h3>Fall 2021</h3></center>
+        <div>On-Device Machine Learning is a project-based course covering how to build, train, and deploy models that can run on low-power devices (e.g. smart phones, refrigerators, and mobile robots).  The course will cover advances topics on distillation, quantization, weight imprinting, power calculation and more.  Every week we will discuss a new research paper and area in this space one day, and have a lab working-group the second.  Specifically, students will be provided with low-power compute hardware (e.g. SBCs and inference accelerators) in addition to sensors (e.g. microphones, cameras, and robotics) for their course project.  The project will involve three components for building low-power multimodal models: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) inference  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) performing training/updates for interactive ML, and <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(3) maximizing power. <br>
+The more that can be performed on device, the more privacy preserving and mobile the solution is.</div>
+<div>
+For each stage of the course project, the final model produced will have an mAh "budget" equivalent to one full charge of a smart phone battery (~4 Ah or 2hrs on Jetson Nano, 7hrs on RPi, or 26hrs on a RPi Zero W).</div>
+<br>
+
+          <div class="table">
+            <div class="row">
+              <div class="col-sm-12">
+              <ul>
+                <li><b>Time & Place</b>: 10:10am - 11:30am on Tu/Th</li>
+                <li><b>Course questions and discussion</b>: <a href="https://odml-f21.slack.com">Slack</a></li>
+                <li><b>GitHub Template</b>: <a href="https://github.com/ybisk/11-767-template">https://github.com/ybisk/11-767-template</a></li>
+              </ul>
+
+
+              <h6><b>Example Industry Motivation</b> <i> "... if the coffee maker with voice recognition was in use for four years, the speech recognition cost for chewing on data back in the Mr Coffee datacenter would wipe out the entire revenue stream from that coffee maker, but that same function, if implemented on a device specifically tuned for this very precise job, could be done for under $1 and would not affect the purchase price significantly. " -- </i><a href="http://www.nextplatform.com/2021/03/30/arms-v9-architecture-explains-why-nvidia-needs-to-buy-it/">Source</a></h6>
+
+
+              </div> <!-- col -->
+            </div> <!-- row -->
+          </div> <!-- table -->
+          <hr>
+
+            <b><h3>Instructors</h3></b>
+            <div class="card-columns" style="column-count:2">
+              <div class="card student">
+                <div class="row no-gutters">
+                  <div class="col-md-6">
+                      <img src=https://yonatanbisk.com/images/YonatanBisk_square.jpg class="card-img" alt="Yonatan Bisk" >
+                  </div>
+                  <div class="col-md-6 vcard" >
+                    <div class="card-body" >
+                      <h5 class="card-title"><b>Yonatan Bisk</b></h5>
+                      <p class="card-text"><small class="text-muted"><a href="mailto:ybisk@cs.cmu.edu">ybisk@cs.cmu.edu</a></small>
+                      </p>
+                    </div> <!-- card-body -->
+                  </div> <!-- col -->
+                </div> <!-- row -->
+              </div> <!-- card -->
+              <div class="card student" >
+                <div class="row no-gutters">
+                  <div class="col-md-6">
+                      <img src=images/emma.jpg class="card-img" alt="Emma Strubell">
+                  </div>
+                  <div class="col-md-6 vcard">
+                    <div class="card-body">
+                      <h5 class="card-title"><b><a href="https://strubell.github.io/">Emma Strubell</a></b></h5>
+                      <p class="card-text"><small class="text-muted"><a href="mailto:strubell@cmu.edu">strubell@cmu.edu</a></small></p>
+                    </div> <!-- card-body -->
+                  </div> <!-- col -->
+                </div> <!-- row -->
+              </div> <!-- card -->
+            </div> <!-- column -->
+
+          <hr>
+          <h4><b>Slack and Course Communication</b></h4>
+          <p>All course communication will happen via slack including slides and discussions.</p>
+          <p><b>Slack</b>
+          <ul>
+            <li><b>#general-questions</b>: For questions about lectures, the course, or help from others on class projects</li>
+            <li><b>🔒group-N</b>: Each group should come up with a name and create their own private channel (invite TAs and instructur).  Use the same name for your GitHub fork and pin the link to the channel.  Please also invite us to the GitHub. Example: 🔒group-RoboFun</li>
+            <li><b>#hardware/#modality</b>: Hardware or Modality related questions should be asked broadly for anyone to help with.</li>
+            <li><b>Private Messages</b>: If there is a question you would like to address to the instructors, please create a 4-person PM on slack.  Please check #general-questions first and post there when possible.</li>
+          </ul>
+          <hr>
+          <h4><b>Assignments Timeline and Grading</b></h4>
+
+          The course is split half on paper discussion and half projects.
+          <table class="table table-hover table-condensed" style="max-width:700px">
+              <tr class="d-flex" style="border-top:none;">
+                  <td class="col-sm-6" style="border-top:none;">Papers</td>
+                  <td class="col-sm-6" style="border-top:none;">Project/Lab</td>
+                </tr>
+              <tr class="d-flex" style="border-top:none;">
+                  <td class="col-sm-5" style="border-top:none;">– Participation</td>
+                  <td class="col-sm-1" style="border-top:none;">20%</td>
+                  <td class="col-sm-5" style="border-top:none;">– Lab Reports (1page)</td>
+                  <td class="col-sm-1" style="border-top:none;">45%</td>
+              </tr>
+              <tr class="d-flex" style="border-top:none;">
+                  <td class="col-sm-5" style="border-top:none;">– Paper Presentations</td>
+                  <td class="col-sm-1" style="border-top:none;">15%</td>
+                  <td class="col-sm-5" style="border-top:none;">– Final Report & Presentation</td>
+                  <td class="col-sm-1" style="border-top:none;">20%</td>
+              </tr>
+          </table>
+
+          <b>Participation:</b><br>
+          Participation in Class or Slack (20%)<br>Participation is evaluated as "actively asking/answering questions based on the lectures, readings, and/or assisting other teams with project issues". Concretely, this means that every novel question or helpful answer provided in Slack will count for 1%, up to a total of 20% of your grade.
+
+          <br>
+          <br>
+          <b>Submission Policies:</b><br>
+          <ul>
+            <li>All deadlines are 5pm EST (determined by GitHub commit time)</li>
+            <li>Late days: Every team has a budget of 3 late days. They will be automatically calculated based on git commit, after which 2% absolute is removed from max grade.</li>
+          </ul>
+
+          <hr>
+          <h4><b>Projects, Hardware, and Resources</b></h4>
+          The course will be primarily centered on a few multimodal tasks/platforms to facilitate cross-team collaboration and technical assistance. If your team wants to use custom hardware or sensors not listed here -- that's fine, but please reach out so we can discuss it and put think through the implications. Every team will also be provided with one of the following Single Board Computers (SBCs)<br><br>
+          <h5>Example Projects</h5>
+          <center>
+          <table class="table table-condensed table-striped" style="max-width:700px">
+            <thead>
+              <tr class="d-flex">
+                <th class="col-md-3">Input</th>
+                <th class="col-md-2">Output</th>
+                <th class="col-md-7">Task</th>
+              </tr>
+            </thead>
+            <tr class="d-flex">
+              <td class="col-md-3">Speech</td>
+              <td class="col-md-2">Text</td>
+              <td class="col-md-7"><a href="https://efficientqa.github.io/task_definition.html">Open-Domain QA</a></td>
+            </tr>
+            <tr class="d-flex">
+              <td class="col-md-3">Images</td>
+              <td class="col-md-2">Text</td>
+              <td class="col-md-7">Object Detection or <a href="http://empslocal.ex.ac.uk/people/staff/np331/index.php?section=FingerSpellingDataset">ASL Finger</a> <a href="https://github.com/midusi/handshape_datasets">Spelling</a></td>
+            </tr>
+            <tr class="d-flex">
+              <td class="col-md-3">Images</td>
+              <td class="col-md-2">Robot Arm</td>
+              <td class="col-md-7">Learning from Demonstration</td>
+            </tr>
+            <tr class="d-flex">
+              <td class="col-md-3">Speech + Images</td>
+              <td class="col-md-2">Robot Car</td>
+              <td class="col-md-7">Vision-Language Navigation</td>
+            </tr>
+          </table>
+
+          <table class="table table-condensed" style="max-width:600px">
+            <tr class="d-flex">
+              <td class="col-md-6">
+                <img src="images/Car_Side.jpg" width=250 alt="Side view of three-wheel robot car">
+              </td>
+              <td class="col-md-6">
+                <img src="images/ASL_Translation.jpg" width=250 alt="LCD Screen and Camera for ASL">
+              </td>
+          </table>
+          </center>
+
+      <h5>Single Board Computers</h5>
+     <center>
+          <table class="table table-condensed table-striped" style="max-width:800px">
+            <thead>
+              <tr class="d-flex">
+                <th class="col-md-3">SBC</th>
+                <th class="col-md-3">RAM</th>
+                <th class="col-md-6">Notes</th>
+              </tr>
+            </thead>
+            <tr class="d-flex">
+              <td class="col-md-3"><a href="https://www.raspberrypi.org/products/raspberry-pi-zero-w/">Raspberry Pi Zero W</a></td>
+              <td class="col-md-3">512MB</td>
+              <td class="col-md-6">150mA draw on limited processor</td>
+            </tr>
+            <tr class="d-flex">
+              <td class="col-md-3"><a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">Raspberry Pi 4</a></td>
+              <td class="col-md-3">2GB, 4GB or 8GB</td>
+              <td class="col-md-6">2Amp draw on Moderately powerful processor</td>
+            </tr>
+            <tr class="d-flex">
+              <td class="col-md-3"><a href="https://coral.ai/products/">Google Coral</a></td>
+              <td class="col-md-3">1GB, 4GB</td>
+              <td class="col-md-6">Edge TPU accelerator (TFLite)</td>
+            </tr>
+            <tr class="d-flex">
+              <td class="col-md-3"><a href="https://www.nvidia.com/en-us/autonomous-machines/jetson-store/#jetson-nano">Jetson Nano</a></td>
+              <td class="col-md-3">2GB</td>
+              <td class="col-md-6">128-core NVIDIA Maxwell CUDA cores</td>
+            </tr>
+          </table>
+          </center>
+
+          <h5>Resources</h5>
+          <ul class="resources">
+            <li> <a href="https://www.oreilly.com/library/view/tinyml/9781492052036/">TinyML by Warden and Situnayake 2019</a></li>
+            <li> <a href="https://courses.nvidia.com/courses/course-v1:DLI+S-RX-02+V2/about">Getting Started with AI on Jetson Nano </a></li>
+            <li> <a href="https://pytorch.org/mobile/home/">PyTorch Mobile</a></li>
+            <li> <a href="https://github.com/microsoft/onnxruntime/blob/master/docs/ONNX_Runtime_for_Mobile_Platforms.md">ONNX Mobile</a></li>
+            <li> <a href="https://github.com/ybisk/robot/blob/main/Code/manual.py">Example DexArm Rotary Code</a></li>
+          </ul>
+
+          <hr>
+          <h4><b>Classes</b></h4>
+          <table class="table table-striped">
+            <thead>
+              <tr class="d-flex">
+                <th class="col-md-6"><center>Discussion</center></th>
+                <th class="col-md-6"><center>Lab</center></th>
+              </tr>
+            </thead>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Aug 31: <b>Course structure & Background</b><br>
+                <ul>
+                  <li><a href="https://arxiv.org/abs/1906.02243">Energy and Policy Considerations for Deep Learning in NLP</a></li>
+                  <li><a href="https://dl.acm.org/doi/pdf/10.1145/3381831">Green AI</a></li>
+                  <li><a href="https://arxiv.org/abs/1811.08824">Early Fusion for Goal Directed Robotic Vision</a></li>
+                </ul>
+            </td>
+            <td class="col-md-6">Sept 2: <b>Hardware and Modality choices</b><br>
+            <ul><li> Hardware trade-off discussions:
+              <ul>
+                <li> Raspberry Pi Zero W <span style="float:right">150 mA</span></li>
+                <li> Raspberry Pi 4 <span style="float:right">600 mA</span></li>
+                <li> Jetson Nano & Google Coral <span style="float:right"> 2A</span></li>
+              </ul></li>
+              <li> Input Options:
+              <ul>
+                <li> Speech Recognition: <span style="float:right">Microphone </span></li>
+                <li> Images:             <span style="float:right">Camera     </span></li>
+              </ul></li>
+              <li> Output Options:
+              <ul>
+                <li> Text Output:        <span style="float:right">LCD Display</span> </li>
+                <li> Control:            <span style="float:right">Robot</span> </li>
+                <li> Additional sensors/extensions will be available: Temperature, LEDs, etc</li>
+              </ul>
+            </ul>
+            </td>
+          </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Sept 7: <b>Understanding the Ecosystem</b>
+                <ul>
+                  <li>ARM</li>
+                  <li>OSs: Raspbian, Ubuntu, Android</li>
+                  <li>SBCs vs Micro-controllers</li>
+              </td>
+              <td class="col-md-6">Sept 9: <b>OS and Peripherals setup</b>
+                <ul>
+                  <li>Dev Boards: Custom ARM builds</li>
+                  <li>Build environments: Source install PyTorch/HuggingFace and TFLite</li>
+                  <li>Familiarize with hardware</li>
+                  <li>Run pretrained models</li>
+                  <li>Report 1 <span style="float:right">5%</span></li></ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">
+                 Sept 14: <b>TinyML, TFLite, PyTorch Mobile</b>
+              </td>
+              <td class="col-md-6">
+                 Sept 16: <b>Benchmark existing model</b>
+                  <ul>
+                  <li>Performance, space, and power</li>
+                  <li>Report 2 <span style="float:right">5%</span></li></ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+             <td class="col-md-6">Sept 21 <b>Distillation</b><br>
+                <ul>
+                  <li><a href="https://arxiv.org/abs/1503.02531">Distilling the Knowledge in a Neural Network</a></li>
+                  <li><a href="https://arxiv.org/abs/1910.01108">DistilBERT</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">
+                Sept 23: <b> Fine-tune pretrained model</b> </b>
+                <ul><li>Report 3 <span style="float:right">5%</span></li></ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">
+                Sept 28: <b>Distillation</b><br><ul>
+                  <li><a href="https://www.aclweb.org/anthology/2020.emnlp-main.37/">TernaryBERT: Distillation-aware Ultra-low Bit BERT</a></li>
+                  <li><a href="https://www.aclweb.org/anthology/2020.acl-main.195/">MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">
+                Sept 30: <b>Thinking</b>
+              </td>
+            </tr>
+
+
+            <tr class="d-flex">
+              <td class="col-md-6">
+                Oct 5: <b>Quantization</b>
+                <ul>
+                  <!--<li><a href="https://arxiv.org/abs/1511.00363">BinaryConnect: Training Deep Neural Networks with binary weights during propagations</a></li>-->
+                  <li><a href="https://arxiv.org/abs/1602.02830">Binarized Neural Networks</a></li>
+                  <li><a href="https://arxiv.org/abs/1812.08011">Training Deep Neural Networks with 8-bit Floating Point Numbers</a></li>
+              </td>
+              <td class="col-md-6">
+                Oct 7: <b>Project Proposal</b>
+                  <ul>
+                    <li>Task definition, modalities, and evaluation</li>
+                    <li>Report 4 <span style="float:right">5%</span></li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Oct 12: <b>Quantization</b>
+                <ul>
+                   <li><a href="https://arxiv.org/abs/1905.03696">HAWQ: Hessian AWare Quantization of Neural Networks with Mixed-Precision</a></li>
+                   <li><a href="https://arxiv.org/abs/1909.05840">Q-BERT: Hessian Based Ultra Low Precision Quantization of BERT</a></li>
+                   <li><i>Optional</i><a href="https://arxiv.org/abs/1805.11046">Scalable Methods for 8-bit Training of Neural Networks</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">Oct 14: <b>No class</b> <!--Benchmark training </b>-->
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Oct 19:<b>On-Device Computer Vision</b>
+                <ul>
+                  <li><a href=https://arxiv.org/abs/1603.05279>XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks</a></li>
+                  <li><a href=https://arxiv.org/abs/1704.04861>MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">Oct 21: <b>Baseline or Hardcoded system</b>
+                <ul>
+                  <li>Full task implementation (no training)</li>
+                  <li>Report 5 <span style="float:right">5%</span></li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Oct 26: <b>Real Time Speech Recognition</b>
+                <ul>
+                   <li><a href=https://arxiv.org/abs/1507.08240>EESEN: End-to-End Speech Recognition using Deep RNN Models and WFST-based Decoding</a></li>
+                   <li><a href=https://ieeexplore.ieee.org/abstract/document/8268935>Exploring architectures, data and units for streaming end-to-end speech recognition with RNN-transducer</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">Oct 28: <b>Implementation</b>
+                <ul>
+                  <li>Documenting Failures, Benchmarking, ...</li>
+                  <li>Report 6 <span style="float:right">5%</span></li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Nov 2: <b>Weight Imprinting</b>
+                <ul>
+                  <li><a href=https://arxiv.org/abs/1712.07136>Low-Shot Learning with Imprinted Weights</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">Nov 4: <b>Implementation</b>
+                <ul>
+                  <li>Documenting Failures, Benchmarking, ...</li>
+                  <li>Report 7 <span style="float:right">5%</span></li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Nov 9: <b>Neural Architecture Search</b>
+                <ul>
+                   <li><a href=https://arxiv.org/abs/1905.12107>SpArSe: Sparse Architecture Search for CNNs on Resource-Constrained Microcontrollers</a></li>
+                   <li><a href=https://arxiv.org/abs/1812.03443>FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable NAS</a></li>
+                  <li><i>Optional:</i><a href=https://arxiv.org/abs/1905.11946>EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks</a></li>
+                  <li><i>Optional:</i><a href=https://arxiv.org/abs/2102.06171>High-Performance Large-Scale Image Recognition Without Normalization</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">Nov 11: <b>Implementation </b>
+                <ul>
+                  <li>Documenting Failures, Benchmarking, ...</li>
+                  <li>Report 8 <span style="float:right">5%</span></li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Nov 16: <b>Power implications of accelerators</b>
+              </td>
+              <td class="col-md-6">Nov 18: <b>Carbon & Alternative Power</b>
+                <ul>
+                  <li>Report 9 <span style="float:right">5%</span></li>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Nov 23: <b>Multimodal Fusion</b>
+                <ul>
+                   <li><a href=https://arxiv.org/abs/1908.03557>VisualBERT: A Simple and Performant Baseline for Vision and Language</a></li>
+                   <li><a href=https://arxiv.org/abs/1811.04179>Mapping Navigation Instructions to Cont. Control Actions with Position-Visitation Pred.</a></li>
+                </ul>
+              </td>
+              <td class="col-md-6">Nov 25: <b>No class</b>
+                <ul>
+                </ul>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Nov 30: <b>FPGAs, Batteries, Solar, ...</b>
+              </td>
+              <td class="col-md-6">Dec 2: <b>Concerns Discussion and Final Prep</b>
+              </td>
+            </tr>
+
+            <tr class="d-flex">
+              <td class="col-md-6">Dec 7: <b>Final Presentation</b>
+              </td>
+              <td class="col-md-6">Dec 9: <b>Final Report due</b>
+              </td>
+            </tr>
+
+     </main>
+  </body>
+</html>
+
