@@ -49,19 +49,18 @@
           </div>
         </div>
 
+        <center>
+          <table>
+            <tr>
+              <td width=250><a href="papers/README.md" style="font-size:1.5em">Example Readings<a></td>
+              <td width=250><a href="labs/README.md" style="font-size:1.5em">Lab Assignments<a></td>
+            </tr>
+          </table>
+          <br>
+        </center>
+
       <main role="main">
-        <!-- 
-        <div class="alert alert-primary" role="alert">
-        <h6>Hi! Based on feedback from students in Fall 2021, we are making some large structural changes to the course.  This is still in development so we'll try and update things here soon but: 
-          <ol>
-            <li> More low-level guidance/exercises on specific techniques: ✅</li>
-            <li> More discussion of pre- and non-neural techniques (implementation and where to use)</li>
-            <li> Specific tracks for more hardware (e.g. robot car) vs theoretical projects </li>
-            <li> Increased lectures and discussion time in leiu of in-class project time: ✅ </li>
-          </ol>
-          If you have any questions, please don't hesitate to ask.  We'll hopefully have more to share soon
-        </h6>
-        </div> -->
+
         <div>On-Device Machine Learning is a project-based course covering how to build, train, and deploy models that can run on low-power devices (e.g. smart phones, refrigerators, and mobile robots).  The course will cover advances topics on distillation, quantization, weight imprinting, power calculation and more.  Every week we will discuss a new research paper and area in this space one day, and have a lab working-group the second.  Specifically, students will be provided with low-power compute hardware (e.g. SBCs and inference accelerators) in addition to sensors (e.g. microphones, cameras, and robotics) for their course project.  The project will involve three components for building low-power multimodal models: <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1) inference  <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2) performing training/updates for interactive ML, and <br>
@@ -439,74 +438,6 @@ For each stage of the course project, the final model produced will have an mAh 
               </td>
             </tr>
         </table>
-
-          <hr>
-          <h4><b>Example Readings</b></h4>
-          <ul>
-            <li><a href='https://dl.acm.org/doi/pdf/10.1145/3381831'>Green AI</a></li>
-            <li><a href='https://arxiv.org/abs/1906.02243'>Energy and Policy Considerations for Deep Learning in NLP</a></li>
-            <li><a href='https://arxiv.org/abs/1811.08824'>Early Fusion for Goal Directed Robotic Vision</a></li>
-            <li><a href='https://arxiv.org/abs/2010.10591'>Knowledge Transfer for Efficient On-device False Trigger Mitigation</a></li>
-            <li><a href='https://arxiv.org/abs/1503.02531'>Distilling the Knowledge in a Neural Network</a></li>
-            <li><a href='https://arxiv.org/abs/1910.01108'>DistilBERT</a></li>
-            <li><a href='https://www.aclweb.org/anthology/2020.emnlp-main.37/'>TernaryBERT: Distillation-aware Ultra-low Bit BERT</a></li>
-            <li><a href='https://www.aclweb.org/anthology/2020.acl-main.195/'>MobileBERT: a Compact Task-Agnostic BERT for Resource-Limited Devices</a></li>
-            <li><a href='https://arxiv.org/abs/2101.08890'>Distilling Large Language Models into Tiny and Effective Students using pQRNN</a></li>
-            <li><a href='https://arxiv.org/abs/1905.12107'>SpArSe: Sparse Architecture Search for CNNs on Resource-Constrained Microcontrollers</a></li>
-            <li><a href='https://arxiv.org/abs/1812.03443'>FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable NAS</a></li>
-            <li><a href='https://arxiv.org/abs/1905.11946'>EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks</a></li>
-            <li><a href='https://arxiv.org/abs/2102.06171'>High-Performance Large-Scale Image Recognition Without Normalization</a></li>
-            <li><a href='https://aclanthology.org/D19-1224'>Show Your Work: Improved Reporting of Experimental Results</a></li>
-            <li><a href='https://aclanthology.org/2020.acl-main.246'>Showing Your Work Doesn’t Always Work</a></li>
-            <li><a href='https://arxiv.org/abs/1812.08011'>Training Deep Neural Networks with 8-bit Floating Point Numbers</a></li>
-            <li><a href='https://arxiv.org/abs/1905.03696'>HAWQ: Hessian AWare Quantization of Neural Networks with Mixed-Precision</a></li>
-            <li><a href='https://arxiv.org/abs/2005.07093'>Bayesian Bits: Unifying Quantization and Pruning</a></li>
-            <li><a href='https://arxiv.org/abs/1805.11046'>Scalable Methods for 8-bit Training of Neural Networks</a></li>
-            <li><a href='https://arxiv.org/abs/1803.03635'>The Lottery Ticket Hypothesis: Finding Sparse, Trainable Neural Networks</a></li>
-            <li><a href='https://arxiv.org/abs/2002.11794'>Train Large, Then Compress: Rethinking Model Size for Efficient Training and Inference of Transformers</a></li>
-            <li><a href='https://arxiv.org/abs/1908.03557'>VisualBERT: A Simple and Performant Baseline for Vision and Language</a></li>
-            <li><a href='https://arxiv.org/abs/1811.04179'>Mapping Navigation Instructions to Cont. Control Actions with Position-Visitation Pred.</a></li>
-            <li><a href='https://arxiv.org/abs/1603.05279'>XNOR-Net: ImageNet Classification Using Binary Convolutional Neural Networks</a></li>
-            <li><a href='https://arxiv.org/abs/1704.04861'>MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications</a></li>
-            <li><a href='https://arxiv.org/abs/1412.7580'>Fast Convolutional Nets With fbfft: A GPU Performance Evaluation</a></li>
-            <li><a href='https://arxiv.org/abs/1609.04309'>Efficient softmax approximation for GPUs</a></li>
-            <li><a href='https://arxiv.org/abs/2006.03236'>Funnel-Transformer: Filtering out Sequential Redundancy for Efficient Language Processing</a></li>
-            <li><a href='https://arxiv.org/abs/2102.11972'>Do Transformer Modifications Transfer Across Implementations and Applications?</a></li>
-            <li><a href='https://arxiv.org/abs/2002.12327'>A Primer in BERTology: What we know about how BERT works</a></li>
-            <li><a href='https://arxiv.org/abs/2009.06732'>Efficient Transformers: A Survey</a></li>
-            <li><a href='https://arxiv.org/abs/2009.14109'>Improving Low Compute Language Modeling with In-Domain Embedding Initialisation</a></li>
-            <li><a href='https://arxiv.org/abs/2104.08803'>Consistent Accelerated Inference via Confident Adaptive Transformers</a></li>
-            <li><a href='https://arxiv.org/abs/2001.08950'>PoWER-BERT: Accelerating BERT Inference via Progressive Word-vector Elimination</a></li>
-            <li><a href='https://arxiv.org/abs/2105.06020'>Are Larger Pretrained Language Models Uniformly Better? Comparing Performance at the Instance Level</a></li>
-            <li><a href='http://papers.nips.cc/paper/9551-are-sixteen-heads-really-better-than-one'>Are Sixteen Heads Really Better Than One?</a></li>
-            <li><a href='https://arxiv.org/abs/1909.05840'>Q-BERT: Hessian Based Ultra Low Precision Quantization of BERT</a></li>
-            <li><a href='https://arxiv.org/abs/2101.01321'>I-BERT: Integer-only BERT Quantization</a></li>
-            <li><a href="https://arxiv.org/abs/1708.00214">Natural Language Processing with Small Feed-Forward Networks</a></li>
-            <li><a href="https://machinelearning.apple.com/research/recognizing-people-photos">Recognizing People in Photos Through Private On-Device Machine Learning</a></li>
-            <li><a href="https://arxiv.org/abs/2005.14187">HAT: Hardware-Aware Transformers for Efficient Natural Language Processing</a></li>
-            <li><a href="https://arxiv.org/abs/1908.09791">Once-for-All: Train One Network and Specialize it for Efficient Deployment</a></li>
-
-
-                 <li><a href="https://arxiv.org/abs/2009.06489">The Hardware Lottery</a></li>
-                <li><a href="https://arxiv.org/abs/1811.06621">Streaming End-to-end Speech Recognition For Mobile Devices</a></li>
-                <li><a href="https://arxiv.org/abs/2012.08561">Pre-Training Transformers as Energy-Based Cloze Models</a></li>
-                 <li><a href="https://arxiv.org/abs/2101.00190">Prefix-Tuning: Optimizing Continuous Prompts for Generation</a></li>
-                 <li><a href="https://arxiv.org/abs/1910.01500">MLPerf Training Benchmark</a></li>
-                <li><a href="https://arxiv.org/abs/2007.03774">The curious case of developmental BERTology: On sparsity, transfer learning, generalization and the brain</a></li>
-                <li><a href="https://arxiv.org/abs/2101.06840">ZeRO-Offload: Democratizing Billion-Scale Model Training</a></li>
-                <li><a href="https://arxiv.org/abs/2012.06946">MiniVLM: A Smaller and Faster Vision-Language Model</a></li>  
-                <li><a href="https://arxiv.org/abs/2007.03213">Enabling On-Device CNN Training by Self-Supervised Instance Filtering and Error Map Pruning</a></li>  
-                <li><a href="https://arxiv.org/abs/1811.10959">Dataset Distillation</a></li>
-                  <li><a href="papers/XOR-Net_An_Efficient_Computation_Pipeline_for_Binary_Neural_Network_Inference_on_Edge_Devices.pdf">XOR-Net: An Efficient Computation Pipeline for Binary Neural Network Inference on Edge Devices</a></li>
-                  <li><a href="https://arxiv.org/abs/1602.02830">Binarized Neural Networks: Training Deep Neural Networks with Weights and Activations Constrained to +1 or -1</a></li>
-                  <li><a href="https://people.eecs.berkeley.edu/~kubitron/cs252/handouts/papers/RooflineVyNoYellow.pdf">Roofline: An Insightful Visual Performance Model for Floating-Point Programs and Multicore Architectures</a></li>
-                  <li><a href="https://arxiv.org/abs/2004.13705">Showing Your Work Doesn’t Always Work</a></li>
-                  <li><a href="https://dadaism.github.io/papers/Energy_Efficient_DNN_SustainCom16.pdf">Evaluating the Energy Efficiency of Deep Convolutional Neural Networks on CPUs and GPUs</a></li>
-                  <li><a href="https://arxiv.org/abs/2004.10454">A Study of Non-autoregressive Model for Sequence Generation</a></li>
-                  <li><a href="https://arxiv.org/abs/2102.11972">Do Transformer Modifications Transfer Across Implementations and Applications?</a></li>
-                  <li><a href="https://arxiv.org/abs/2006.03236">Funnel-Transformer: Filtering out Sequential Redundancy for Efficient Language Processing</a></li>
-
-        </ul>
      </main>
   </body>
 </html>
