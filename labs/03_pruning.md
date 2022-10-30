@@ -146,6 +146,13 @@ Using your new disk size function, fill in the next row of the same table:
 |     0   |   0.0%  |        |         |        |
 |     1   |   33.0%   |    ?    |    ?    |    ?    |
 
+*Note:* When calculating disk size of your sparsified models in the following sections, make sure you do *not* remove reparameterization of your "real" pruned model. Instead, make a temporary copy of your model as such (perhaps in a function):
+
+```py
+from copy import deepcopy
+
+model_copy = deepcopy(model)
+```
 
 Repeated unstructured magnitude pruning
 ---
