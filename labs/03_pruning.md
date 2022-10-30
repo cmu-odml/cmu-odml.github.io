@@ -72,10 +72,10 @@ or
 Take a look at your `model.named_parameters()` again, and your `model.named_buffers()`. (Just observe, no need to answer a question.)
 
 4. Write functions to calculate the sparsity level (using the percent of buffers that are 0):
-    -  for each layer,
-    -  for all pruned layers, and
+    -  for each parameter,
+    -  for all pruned parameters overall, and
     -  for the model overall
-   **And report each of these values:** the sparsity level at each layer, across all pruned layers, and for the model overall.
+   **And report each of these values:** the sparsity level of each parameter, across all pruned parameters, and for the model overall.
 5. Write a function to calculate the amount of space that a pruned model takes up when reparameterization is removed and tensors are converted to *sparse* representations.
 
 **Tip:** Note that storage size actually *grows* when we first prune a model. Below we give some pointers on how to actually convert and store the parameters in a sparse format on disk.
