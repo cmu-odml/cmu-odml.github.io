@@ -2,6 +2,8 @@ Lab 4: On-Device
 ===
 In this lab you will gain experience setting up and running models on a new, small device: Either the Jetson Nano or Raspberry Pi, depending on the device that has been assigned to your group. You will re-run code and experiments for quantization and pruning that you developed in Lab 2 and Lab 3, and compare your experiences and results to the original hardware (laptop or server) that you used for those assignments. You will also practice researching more detailed hardware specifications in order to understand what should or should not work on a given device and why.
 
+You can change the hyperparameters somewhat to reduce computational burden -- e.g. hidden size, input resolution -- but please clearly report what you did, try to keep the changes minimal, and be consistent throughout the assignment.
+
 Preliminaries & Setup
 ---
 Before coming to class, you should already have flashed your device with the latest operating system and everyone in your group
@@ -44,11 +46,13 @@ Quantization on-device
 ---
 2. Re-run static and dynamic quantization experiments from [Lab 2](https://github.com/cmu-odml/cmu-odml.github.io/blob/master/labs/02_quantization.md), using just the "Lab 2" model on MNIST.
    Generate the same table as in Lab 2 and include it in your report. If you find that some operations aren't supported on your device, that's ok, please describe this in detail in the first part of your discussion below.
+   You **do not** need to re-run training on the device, you can train on another machine and just run and evaluate *inference* on the device.
 
 Pruning on-device
 ---
 3. Re-run iterative magnitude pruning (IMP) experiments from [Lab 3](https://github.com/cmu-odml/cmu-odml.github.io/blob/master/labs/03_pruning.md) with and without rewinding.
    Generate the same plot as in Lab 3 (except with fewer experiments) and include it in your report.
+   As above, you do not need to re-run training on the device, you can train on another machine and just run and evaluate inference on the device.
 
 Discussion
 ---
