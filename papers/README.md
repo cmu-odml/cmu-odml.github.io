@@ -144,7 +144,9 @@ Architecture-specific tricks: Transformers
 - [Are Pre-trained Convolutions Better than Pre-trained Transformers?](https://aclanthology.org/2021.acl-long.335/)
 - [FNet: Mixing Tokens with Fourier Transforms](https://aclanthology.org/2022.naacl-main.319/)
 - [Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation](https://openreview.net/forum?id=R8sQPpGCv0)
-- 
+- [Universal Transformers](https://openreview.net/forum?id=HyzdRiR9Y7)
+- [Synthesizer: Rethinking Self-Attention in Transformer Models](https://arxiv.org/abs/2005.00743)
+- [Longformer: The Long-Document Transformer](https://arxiv.org/abs/2004.05150)
 
 Speech
 ----
