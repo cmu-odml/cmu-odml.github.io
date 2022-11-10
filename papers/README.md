@@ -129,6 +129,8 @@ Task-specific tricks
 - [Deep Encoder, Shallow Decoder: Reevaluating Non-autoregressive Machine Translation](https://arxiv.org/abs/2006.10369)
 - [Improving Low Compute Language Modeling with In-Domain Embedding Initialisation](https://arxiv.org/abs/2009.14109)
 - [COIL: Revisit Exact Lexical Match in Information Retrieval with Contextualized Inverted List](https://aclanthology.org/2021.naacl-main.241/)
+- [PAQ: 65 Million Probably-Asked Questions and What You Can Do With Them](https://aclanthology.org/2021.tacl-1.65/)
+- [STACL: Simultaneous Translation with Implicit Anticipation and Controllable Latency using Prefix-to-Prefix Framework](https://aclanthology.org/P19-1289/)
 
 Architecture-specific tricks: Transformers
 ----
@@ -141,6 +143,8 @@ Architecture-specific tricks: Transformers
 - [Are Sixteen Heads Really Better Than One?](http://papers.nips.cc/paper/9551-are-sixteen-heads-really-better-than-one)
 - [Are Pre-trained Convolutions Better than Pre-trained Transformers?](https://aclanthology.org/2021.acl-long.335/)
 - [FNet: Mixing Tokens with Fourier Transforms](https://aclanthology.org/2022.naacl-main.319/)
+- [Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation](https://openreview.net/forum?id=R8sQPpGCv0)
+- 
 
 Speech
 ----
