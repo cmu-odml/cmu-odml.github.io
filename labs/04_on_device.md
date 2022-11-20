@@ -56,9 +56,9 @@ Pruning on-device
 
 Discussion
 ---
-- Did you come across challenges when setting up the device or trying to run your code on this device? List any stumbling blocks, and desribe how you surmounted them, or tried to. 
-  Did you find that some operations aren't supported
-  Describe one notable thing that you learned by porting your code to this new device.
+- Did you come across challenges when setting up the device or trying to run your code on this device? List any stumbling blocks, and describe how you surmounted them, or tried to. 
+- Did you find that some operations aren't supported?
+- Describe one notable thing that you learned by porting your code to this new device.
 - Choose either quantization or pruning, and compare and contrast your results from this lab and the previous lab. (Re-)report the hardware you used for the previous lab. 
   Are there trends that you expected, or didn't expect? For example, do latency and space on disk correspond to your expectations, why or why not? 
   Explain what you observed. **You should refer to specific capabilities of the hardware** (such as whether it supports certain operations in certain precisions, or the extent to which it supports vector operations.) 
