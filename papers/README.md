@@ -103,6 +103,7 @@ Vision / Robotics
 - [Fast and Furious: Real Time End-to-End 3D Detection, Tracking and Motion Forecasting with a Single Convolutional Net](https://openaccess.thecvf.com/content_cvpr_2018/papers/Luo_Fast_and_Furious_CVPR_2018_paper.pdf)
 - [MicroNets: Neural Network Architectures for Deploying TinyML Applications on Commodity Microcontrollers](https://arxiv.org/abs/2010.11267)
 - [ES6D: A Computation Efficient and Symmetry-Aware 6D Pose Regression Framework](https://openaccess.thecvf.com/content/CVPR2022/papers/Mo_ES6D_A_Computation_Efficient_and_Symmetry-Aware_6D_Pose_Regression_Framework_CVPR_2022_paper.pdf)
+- [Efficient Spatially Sparse Inference for Conditional GANs and Diffusion Models](https://arxiv.org/abs/2211.02048)
 
 Architecture-specific tricks: CNNs
 ----
