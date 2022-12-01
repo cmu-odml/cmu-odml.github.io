@@ -31,23 +31,24 @@ If you are able to measure energy use using both methods for both platforms, do 
 
 Multiply energy draw by inference time to get an estimate of energy required per inference (you can average over input size).
 
-4. **Choose a model to benchmark**
-  * How many times do you need to run inference?
-  * What batchsize did you choose, and why?
-  * When did you start/stop measuring power?
-5. **Choose a second model that you think will use less power**
-  * Why do you think this will be more power efficient?
-  * Was it?
+4. **Benchmark the first model**
+  * How many times do you need to run inference to get a stable estimate?
+  * What batch size did you choose, and why?
+  * When did you start/stop measuring power, and why?
+5. **Benchmark the second model**
+  * Did this model perform as you expected, decribed in (3)? If not, why do you think this is?
 6. **Make a change to your environment** (e.g. OS, background processes, etc) that you think will affect power draw
   * What change did you make? Why did you think it would help?
   * How much did it change your results from (5)?
 
 **Example Table:**
-| Model Details | Batch | Watt-Hours/Mins | Std Dev |
-| ------------- | ----- | --------------- | ------- |
-| Specs 1       |       |                 |         |
-| Specs 2       |       |                 |         |
-| Changes       |       |                 |         |
+| Model Details | Hardware | Batch | Watt-Hours/Mins | Std Dev |
+| ------------- | ----- | ----- | --------------- | ------- |
+| Model 1       | HW1      |        |                |         |
+| Model 2       | HW1      |        |                |         |
+| Model 1       | HW2      |        |                |         |
+| Model 2       | HW2      |        |                |         |
+| Changes       |          |         |               |         |
 
 Column one requires corresponding justification and additional details (above).
 
