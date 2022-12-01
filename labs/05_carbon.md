@@ -27,7 +27,7 @@ This is a manual process so there will be some error in measurement, but repeate
 **On-board / command line**
 The exact tools for this will vary depending on the hardware platform. On most platforms, you can use [PowerTOP](https://github.com/fenrus75/powertop). For Intel-based platforms, you can use the [RAPL power meter](https://web.eece.maine.edu/~vweaver/projects/rapl/). On NVIDIA platforms, you can use `nvidia-smi`.
 
-If you are able to measure energy use using both methods for both platforms, do so and compare your findings. You may not be able to use both methods for both hardware platforms, either due to not having access to the power source of the hardware (in the case of a server), or due to the hardware platform not having on-board support for power measurement (as is the case for the Jetson Nano 2GB). This is ok, but please clearly state why this is the case for each platform, and perform energy measurement using at least one method for each platform.
+You may not be able to use both methods for both hardware platforms, either due to not having access to the power source of the hardware (in the case of a server), or due to the hardware platform not having on-board support for power measurement (as is the case for the Jetson Nano 2GB). This is ok, but please clearly state why this is the case for each platform, and perform energy measurement using at least one method for each platform.
 
 Multiply energy draw by inference time to get an estimate of energy required per inference (you can average over input size).
 
@@ -37,18 +37,18 @@ Multiply energy draw by inference time to get an estimate of energy required per
   * When did you start/stop measuring power, and why?
 5. **Benchmark the second model**
   * Did this model perform as you expected, decribed in (3)? If not, why do you think this is?
-6. **Make a change to your environment** (e.g. OS, background processes, etc) that you think will affect power draw
+6. **Make a change to your environment** (e.g. OS, background processes, etc) that you think will affect power draw. If you are able to measure energy use using both methods (wall and command line), you might consider trying this. Compare and discuss your findings. 
   * What change did you make? Why did you think it would help?
   * How much did it change your results from (5)?
 
 **Example Table:**
-| Model Details | Hardware | Batch | Watt-Hours/Mins | Std Dev |
-| ------------- | ----- | ----- | --------------- | ------- |
-| Model 1       | HW1      |        |                |         |
-| Model 2       | HW1      |        |                |         |
-| Model 1       | HW2      |        |                |         |
-| Model 2       | HW2      |        |                |         |
-| Changes       |          |         |               |         |
+| Model Details | Hardware | Measurement method |Batch | Watt-Hours/Mins | Std Dev |
+| ------------- | ----- | ----| - | --------------- | ------- |
+| Model 1       | HW1      |    |    |                |         |
+| Model 2       | HW1      |     |   |                |         |
+| Model 1       | HW2      |      |  |                |         |
+| Model 2       | HW2      |     |   |                |         |
+| Changes       |          |      |   |               |         |
 
 Column one requires corresponding justification and additional details (above).
 
