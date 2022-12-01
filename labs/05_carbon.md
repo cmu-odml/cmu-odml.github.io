@@ -54,8 +54,9 @@ Column one requires corresponding justification and additional details (above).
 Converting energy to estimated carbon emissions
 ---
 Now, convert watt-hours to estimated emissions by multiplying by carbon intensity. You can use [this resource](https://www.epa.gov/egrid/power-profiler#/) to get a coarse-grained estimate of energy intensity for Pittsburgh.
+
 7. Add this estimate as a column to your table.
-8. Do some research to 
+8. Do some research to find some emissions of other activities that are comparable to these. Are you suprised by the results? Why or why not?
 
 Discussion
 ---
