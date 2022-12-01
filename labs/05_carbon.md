@@ -44,7 +44,7 @@ Multiply energy draw by inference time to get an estimate of energy required per
 **Example Table:**
 | Model Details | Hardware | Measurement method |Batch | Watt-Hours/Mins | Std Dev |
 | ------------- | ----- | ----| - | --------------- | ------- |
-| Model 1       | HW1      |    |    |                |         |
+| Model 1       | HW1      | Multimeter   |    |                |         |
 | Model 2       | HW1      |     |   |                |         |
 | Model 1       | HW2      |      |  |                |         |
 | Model 2       | HW2      |     |   |                |         |
