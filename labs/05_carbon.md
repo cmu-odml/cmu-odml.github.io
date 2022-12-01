@@ -1,6 +1,10 @@
 Lab 4: Carbon
 ===
-In this lab you will gain experience measuring the inference energy use of ML models on different hardware platforms, and converting those measurements into estimated carbon emissions. **You will do this lab as a group project with your class project team**, and you only need to submit a single report jointly for your team.
+In this lab you will gain experience measuring the inference energy use of ML models on different hardware platforms, and converting those measurements into estimated carbon emissions.
+-  **You will do this lab as a group project with your class project team**, and you only need to submit a single report jointly for your team.
+- You need to collect a [USB Multimeter](https://www.amazon.com/gp/product/B07DCTG6LH/) or [Kill-a-Watt](https://www.amazon.com/P3-P4400-Electricity-Usage-Monitor/dp/B00009MDBU/) from us to complete this lab.
+- This is an _**inference**_ only lab, but there are lots of variables that affect power draw, so you will need to run inference multiple times.
+- You now should be familiar with lots of the issues, so this lab is a bit more open ended.
 
 Preliminaries
 ---
@@ -15,17 +19,47 @@ Measuring energy use
 ---
 There are two ways to measure energy use: using a power meter at the wall, and (for some hardware) using on-board support for power monitoring. 
 
-[describe]
+**Power meter**
+- *USB Multimeter* Your multimeter fits directly into the USB plug.  It measures both instantaneous values (Amp, Volt, Watt) and over time (Watt Hours).  You can also reset the accumulator.
+- *Kill-a-Watt* requires longer runtimes to get a KWH reading
+This is a manual process so there will be some error in measurement, but repeated and longer experiments help reduce noise
+
+**On-board / command line**
+The exact tools for this will vary depending on the hardware platform. On most platforms, you can use [PowerTOP](https://github.com/fenrus75/powertop). For Intel-based platforms, you can use the [RAPL power meter](https://web.eece.maine.edu/~vweaver/projects/rapl/). On NVIDIA platforms, you can use `nvidia-smi`.
 
 If you are able to measure energy use using both methods for both platforms, do so and compare your findings. You may not be able to use both methods for both hardware platforms, either due to not having access to the power source of the hardware (in the case of a server), or due to the hardware platform not having on-board support for power measurement (as is the case for the Jetson Nano 2GB). This is ok, but please clearly state why this is the case for each platform, and perform energy measurement using at least one method for each platform.
 
+Multiply energy draw by inference time to get an estimate of energy required per inference (you can average over input size).
+
+4. **Choose a model to benchmark**
+  * How many times do you need to run inference?
+  * What batchsize did you choose, and why?
+  * When did you start/stop measuring power?
+5. **Choose a second model that you think will use less power**
+  * Why do you think this will be more power efficient?
+  * Was it?
+6. **Make a change to your environment** (e.g. OS, background processes, etc) that you think will affect power draw
+  * What change did you make? Why did you think it would help?
+  * How much did it change your results from (5)?
+
+**Example Table:**
+| Model Details | Batch | Watt-Hours/Mins | Std Dev |
+| ------------- | ----- | --------------- | ------- |
+| Specs 1       |       |                 |         |
+| Specs 2       |       |                 |         |
+| Changes       |       |                 |         |
+
+Column one requires corresponding justification and additional details (above).
+
 Converting energy to estimated carbon emissions
 ---
-
+Now, convert watt-hours to estimated emissions by multiplying by carbon intensity. You can use [this resource](https://www.epa.gov/egrid/power-profiler#/) to get a coarse-grained estimate of energy intensity for Pittsburgh.
+7. Add this estimate as a column to your table.
+8. Do some research to 
 
 Discussion
 ---
-
+Answer all bullets above with justifications and explanations of counter-intuitive results.
 
 Extra Credit
 ---
@@ -33,6 +67,7 @@ Extra Credit
 Do some research to investigate the embodied carbon emissions for both hardware platforms you chose, and report your findings. You don't need to incorporate these numbers into your inference-level estimate of emissions, you can just report the overall estimated emissions required to produce and recycle the hardware. Cite your sources.
 
 #### 2. Use WattTime to get a more precise estimate of carbon emissions [2 points]
+The [WattTime API](https://www.watttime.org/api-documentation/#introduction) provides more fine-grained information on carbon intensity for a given location (e.g. latitude/longitude) and time. Use calls to this API to get a better estimate of carbon intensity based on the time and location where your experiments were run, and add a column to the table. Try varying the time and location. Do the emissions change? Hypothesize why or why not, based on the times and locations you tried.
 
 
 Grading and submission (10 points + 3 extra credit)
