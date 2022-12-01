@@ -30,7 +30,7 @@ Discussion
 Extra Credit
 ---
 #### 1. Estimate embodied emissions for your models [1 point]
-Do some research
+Do some research to investigate the embodied carbon emissions for both hardware platforms you chose, and report your findings. You don't need to incorporate these numbers into your inference-level estimate of emissions, you can just report the overall estimated emissions required to produce and recycle the hardware. Cite your sources.
 
 #### 2. Use WattTime to get a more precise estimate of carbon emissions [2 points]
 
