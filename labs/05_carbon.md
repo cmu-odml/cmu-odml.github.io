@@ -25,7 +25,7 @@ There are two ways to measure energy use: using a power meter at the wall, and (
 This is a manual process so there will be some error in measurement, but repeated and longer experiments help reduce noise
 
 **On-board / command line**
-The exact tools for this will vary depending on the hardware platform. On most platforms, you can use [PowerTOP](https://github.com/fenrus75/powertop). For Intel-based platforms, you can use the [RAPL power meter](https://web.eece.maine.edu/~vweaver/projects/rapl/). On NVIDIA platforms, you can use `nvidia-smi`.
+The exact tools for this will vary depending on the hardware platform. On most platforms, you can use [PowerTOP](https://github.com/fenrus75/powertop). For Intel-based platforms, you can use the [RAPL power meter](https://web.eece.maine.edu/~vweaver/projects/rapl/). On NVIDIA platforms, you can use `nvidia-smi` or `tegrastats` for Jetson.
 
 You may not be able to use both methods for both hardware platforms, either due to not having access to the power source of the hardware (in the case of a server), or due to the hardware platform not having on-board support for power measurement (as is the case for the Jetson Nano 2GB). This is ok, but please clearly state why this is the case for each platform, and perform energy measurement using at least one method for each platform.
 
