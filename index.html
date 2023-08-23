@@ -49,9 +49,9 @@
           </div>
         </div>
 
-        <div class="alert alert-warning" role="alert">
+        <!-- <div class="alert alert-warning" role="alert">
           Updating for Fall 2023 is <i>just</i> starting
-        </div>
+        </div> -->
 
         <center>
           <table>
@@ -78,7 +78,7 @@ For each stage of the course project, the final model produced will have an mAh 
             <div class="row">
               <div class="col-sm-12">
               <ul>
-                <li><b>Time & Place</b>: 9:30am - 10:50am Tu/Th in TBD</li>
+                <li><b>Time & Place</b>: 9:30am - 10:50am Tu/Th in DH 1212</li>
                 <li><b>Assignments will be submitted and graded using <a href="https://canvas.cmu.edu/courses/30876">Canvas</a></b></li>
               </ul>
 
@@ -152,10 +152,10 @@ For each stage of the course project, the final model produced will have an mAh 
 
           <b>Submission Policies:</b><br>
           <ul>
-            <li>Submit a link/PDF to <a href="https://canvas.cmu.edu/courses/30876">Canvas</a>.
-            <li>Lab reports are individual while projects will be written up and submitted as a group. </li>
+            <li>Submit via <a href="https://canvas.cmu.edu/courses/35445">Canvas</a>.
+            <li>The first Lab reports is individual, the remaining will be written up and submitted as a group. </li>
             <li>All deadlines are midnight EST (determined by Canvas submission time).</li>
-            <li>Late days: Every student has a budget of 5 late days to be used throughout the semester. They will be automatically calculated based on submit time, after which 2% absolute per day is removed from max grade.</li>
+            <li>Late days: Every team has a budget of 5 late days to be used throughout the semester. They will be automatically calculated based on submit time, after which 2% absolute per day is removed from max grade.</li>
           </ul>
 
           <b>COVID Details:</b><br>
@@ -181,8 +181,8 @@ For each stage of the course project, the final model produced will have an mAh 
 
 
           <hr>
-          <h4><b>Projects, Hardware, and Resources</b></h4>
-          The course will be primarily centered on a few multimodal tasks/platforms to facilitate cross-team collaboration and technical assistance. If your team wants to use custom hardware or sensors not listed here -- that's fine, but please reach out so we can discuss it and put think through the implications. Every team will also be provided with one of the following Single Board Computers (SBCs)<br><br>
+          <h4><b>Bring your own Data/Hardware/Projects for Lab</b></h4>
+          The first lab will be done individually on your laptops to ensure everyone is comfortable with the basic libraries.  Afterwards, teams will form and propose what data or task they are interested in using as their benchmark for the course.  As part of this, we will provide several options for Single Board Computers (SBCs) (see below), but many teams will have a preferred platform they would rather use (e.g. their own robot).  This is completely fine, but we will verify during the early benchmarking labs that experiments can be run in those settings.<br><br>
           <h5>Example Projects</h5>
           <center>
           <table class="table table-condensed table-striped" style="max-width:700px">
@@ -249,13 +249,6 @@ For each stage of the course project, the final model produced will have an mAh 
           </table>
           </center>
 
-          <b>FAQ</b>
-          <ol>
-          <li><b>Can we use other platforms?</b> Yes! But let's talk about the pros and cons together.</li>
-          <li><b>What about custom sensors and hardware?</b> Same answer :)</li>
-          <li><b>Will the course pay for a Coral/Pi Zero/...?</b> Yes, but let's chat first.</li>
-          </ol>
-
           <h5>Resources</h5>
           <ul class="resources">
             <li> <a href="https://www.oreilly.com/library/view/tinyml/9781492052036/">TinyML by Warden and Situnayake 2019</a></li>
@@ -288,43 +281,45 @@ For each stage of the course project, the final model produced will have an mAh 
                 <ul>
                 </ul>
               </td>
-              <td class="col-md-6"  style="background-color:#fae8e0">Sept 7: <b>Lab 1: Benchmarking Simple Models</b>
+              <td class="col-md-6"  style="background-color:#fae8e0">Sept 7: <b>Lab 1: Benchmarking Simple Models (individual assignment)</b>
               </td>
             </tr>
 
-            <tr class="d-flex">
+           <tr class="d-flex">
               <td class="col-md-6">
                 Sept 12: <b>NLP</b>
               </td>
-              <td class="col-md-6">
-                 Sept 14: <b>Computer Vision, Edge Hardware, and Robotics</b>
+              <td class="col-md-6" style="background-color:#b6e2d3">
+                Sept 14: <b>Project Group Speed dating</b>
                  <ul>
                    <li>Sept 15: Lab 1 Due</li>
                  </ul>
               </td>
-            </tr>
+           </tr>
 
             <tr class="d-flex">
-             <td class="col-md-6">Sept 19 <b> Efficiency Benchmarking </b> </b>
+              <td class="col-md-6">
+                 Sept 19: <b>Computer Vision, Edge Hardware, and Robotics</b>
+              </td>
+             <td class="col-md-6">Sept 21 <b> Efficiency Benchmarking </b> </b>
                 <ul>
-                  <li>Lecture Highlight (9/20)</li>
-                  <li>Project Proposals (9/22)</li>
+                  <li>Lecture Highlight (9/22)</li>
                 </ul>
               </td>
-              </td>
-              <td class="col-md-6" style="background-color:#b6e2d3">
-                Sept 21: <b>Paper discussions</b>
-                <ul>
-                  <li>Discussion Highlight (9/23)</li>
-                </ul>
             </tr>
 
             <tr class="d-flex">
               <td class="col-md-6">
                 Sept 26: <b>Compression I: Quantization and Pruning </b><br>
+                 <ul>
+                   <li>Oct 27: Lecture Highlight</li>
+                 </ul>
               </td>
               <td class="col-md-6"  style="background-color:#fae8e0">
                 Sept 28: <b>Lab 2: Quantization</b>
+                <ul>
+                  <li>Project Proposals (data, task, ...) (9/29)</li>
+                </ul>
               </td>
             </tr>
 
@@ -332,25 +327,30 @@ For each stage of the course project, the final model produced will have an mAh 
             <tr class="d-flex">
               <td class="col-md-6">
                 Oct 3: <b>Compression II: Pruning (cont) and Distillation</b>
+                 <ul>
+                   <li>Oct 4: Lecture Highlight</li>
+                 </ul>
                   
               </td>
-              <td class="col-md-6">
-                Oct 5: <b>Project Feedback</b>
+              <td class="col-md-6">Oct 5: <b>Neural Architecture Search</b>
                  <ul>
-                   <li>Oct 6: Lab 2 Due</li>
+                   <li>Oct 6: Lecture Highlight</li>
                  </ul>
               </td>
             </tr>
 
             <tr class="d-flex">
-              <td class="col-md-6">Oct 10: <b>Neural Architecture Search</b>
+              <td class="col-md-6">
+                 Oct 10:  <b>Architecture-specific tricks I: CNNs</b>
+                  <ul>
+                   <li>Oct 9: Lecture Highlight</li>
+                  </ul>
               </td>
-              <td class="col-md-6" style="background-color:#b6e2d3">Oct 12: <b>Paper discussion</b> 
+              <td class="col-md-6" style="background-color:#fae8e0">
+                  Oct 12: <b>Lab 3: Pruning</b>
                  <ul>
-                   <li>Oct 11: Lecture Highlight</li>
-                   <li>Oct 13: Discussion Highlight</li>
+                   <li>Oct 13: Lab 2 Due</li>
                  </ul>
-              </td>
               </td>
             </tr>
 
@@ -364,60 +364,60 @@ For each stage of the course project, the final model produced will have an mAh 
             </tr>
 
             <tr class="d-flex">
-              <td class="col-md-6">Oct 24: <b>Project Feedback</b>
+              <td class="col-md-6">Oct 24: <b>Project Sharing</b>
               </td>
-              <td class="col-md-6" style="background-color:#fae8e0">
-                  Oct 26: <b>Lab 3: Pruning</b>
+              <td class="col-md-6">
+                  Oct 26: <b>Project Sharing</b>
+                 <ul>
+                   <li>Oct 27: Lab 3 Due</li>
+                 </ul>
               </td>
             </tr>
 
             <tr class="d-flex">
-              <td class="col-md-6">Oct 31: <b>Architecture-specific tricks I: CNNs</b>
+              <td class="col-md-6">Oct 31: <b>Architecture-specific tricks II: Transformers</b>
                  <ul>
                    <li>Nov 1: Lecture Highlight</li>
                  </ul>
               </td>
-              <td class="col-md-6" style="background-color:#b6e2d3">Nov 2: <b>Paper discussions</b>
+              <td class="col-md-6" >Nov 2: <b>Don't Train</b>
                  <ul>
-                   <li>Nov 3: Discussion Highlight</li>
                    <li>Nov 3: Lab 3 Due</li>
+                   <li>Nov 3: Lecture Highlight</li>
                  </ul>
               </td>
             </tr>
 
             <tr class="d-flex">
-              <td class="col-md-6">Nov 7: <b>Architecture-specific tricks II: Transformers</b>
-                 <ul>
-                   <li>Nov 8: Lecture Highlight</li>
-                 </ul>
+              <td class="col-md-6">Nov 7: <b>Election Day</b>
               </td>
               <td class="col-md-6"  style="background-color:#fae8e0">Nov 9: <b>Lab 4: A new hardware platform</b>
               </td>
             </tr>
 
             <tr class="d-flex">
-              <td class="col-md-6">Nov 14: <b>Guest: TBD
+              <td class="col-md-6">Nov 14: <b>Efficient Training</b>
                  <ul>
                    <li>Nov 15: Lecture Highlight</li>
                  </ul>
               </td>
-              <td class="col-md-6" style="background-color:#b6e2d3">Nov 16: <b>Paper discussions</b>
+              <td class="col-md-6">Nov 16: <b>Parameter Efficient Fine-Tuning</b>
                  <ul>
-                   <li>Nov 17: Discussion Highlight</li>
                    <li>Nov 17: Lab 4 Due</li>
+                   <li>Nov 17: Lecture Highlight</li>
                  </ul>
               </td>
             </tr>
 
             <tr class="d-flex">
-              <td class="col-md-6">Nov 21: <b>Efficient Training</b>
+              <td class="col-md-6">Nov 21: <b>Project Hours</b>
               </td>
               <td class="col-md-6">Nov 23: <b>No class: Thanksgiving</b>
               </td>
             </tr>
 
             <tr class="d-flex">
-              <td class="col-md-6">Nov 28: <b>Carbon (and water and minerals) and the Future</b>
+              <td class="col-md-6">Nov 28: <b>Environmental Impacts</b>
                  <ul>
                    <li>Nov 29: Lecture Highlight</li>
                  </ul>
