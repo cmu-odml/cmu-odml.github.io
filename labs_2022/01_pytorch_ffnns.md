@@ -1,12 +1,10 @@
 Lab 1: Benchmarking Efficiency in Feed-Forward Neural Networks.
 ===
 In this lab you will build a basic feed-forward neural network for classification in PyTorch, and train and evaluate that model in terms of efficiency and classification accuracy on simple
-language or vision tasks. The goals of this exercise are: 
- 1. Proficiency training and evaluating basic feed-forward neural network architectures for language or computer vision classifcation tasks in PyTorch; 
+language and vision tasks. The goals of this exercise are: 
+ 1. Proficiency training and evaluating basic feed-forward neural network architectures for language and computer vision classifcation tasks in PyTorch; 
  2. Implement basic efficiency benchmarks: Latency, parameter count, and FLOPs.
  3. Experiment with varying model size, depth, and input resolution and analyze how that impacts efficiency vs. accuracy.
-
-*Note*: This is an individual lab to be done on your personal laptop.
 
 Data
 ----
@@ -54,10 +52,7 @@ Then the corresponding BoW vector would look like:
 | 1   | 1   | 0      | 1     | 1     | 0    | 1       | 0   | 2  | 2     | 1   |
 
 ### Vision
-The raw pixel values will work as input for now. 
-We recommended that you normalize values to have mean 0 and std deviation 1.
-Specifically, compute the mean and standard deviation, and update your values as
-new_val = (old_val - mean)/std_dev
+The raw pixel values will work as input for now.
 
 Model and Evaluation
 ----
@@ -66,20 +61,17 @@ Build a single-layer feed-forward network with ReLU activations and cross-entrop
 | hyperparameter | value |
 | --- | --- |
 | learning rate | 0.001 |
-| batch size | 64 |
-| hidden layers | 2 |
+| batch size | 100 |
 | hidden size  | 512 | 
 | epochs | 2 |
 
-Recommended hidden sizes are 1024 for MNIST and 256 for SST 
-
-Compute classification accuracy for your task.
-1. What accuracy do you obtain on your task, and using what hyperparameters? This will be your "base model."
+Compute classification accuracy for each task.
+1. What accuracy do you obtain on each task, and using what hyperparameters? This will be your "base model."
 
 Now, implement three methods for benchmarking the efficiency of this model:
 - **Latency:** Measure training time and inference latency. You can simply use `time.time()` in Python around your training loop to get an estimate of training time. For inference latency, measure the average time it takes to classify each example. You should run this a few times, and throw away the first measurement to allow for initial warmup (e.g. caching, etc.) 
 - **Parameter count:** Write a function to compute the number of parameters in your model. This should be a general-purpose function that can be run on any PyTorch model; rather than estimate this in closed form, you should loop over the tensors of parameters in the model and sum their sizes.
-- **FLOPs:** Write a function to compute the number of floating-point operations that need to be performed in order to do inference on one example in your model. This one does not have to be general-purpose, it should be specific to feed-forward networks. This is where many of you will get tripped up.  Please simply explain the approach you took and we will grade based on clarity and reasoning, not specific values.
+- **FLOPs:** Write a function to compute the number of floating-point operations that need to be performed in order to do inference on one example in your model. This one does not have to be general-purpose, it should be specific to feed-forward networks.
 
 2. What is the exact hardware that you are using to benchmark your code? Report the CPU and RAM, in as much detail as is available from your operating system.
 3. Report the average training time and inference latency of your model. Is the variance high or low? Did you notice any outliers? Was the first iteration of inference slower than the others? Try to explain any phenomena you note.
@@ -91,19 +83,19 @@ Varying depth and width
 ----
 Now, try varying the depth and width of your base model. How do depth and width trade off accuracy and efficiency?
 
-6. Train and evaluate your model using a variety of depths. Report the parameter counts, FLOPs, and latency, and generate three plots:
+6. Train and evaluate your model in both modalities using a variety of depths. Report the parameter counts, FLOPs, and latency, and generate three plots:
     - FLOPs on the x axis and accuracy on the y axis
     - Latency on the x axis and accuracy on the y axis
     - FLOPs on the x axis and latency on the y axis
    
     Discuss your results.
-7. Train and evaluate your model using a variety of widths. Make sure you try both going narrower than the input, and wider than the input, if memory permits. Report the parameter counts, and generate the same three plots as in (6), and discuss.
+7. Train and evaluate your model in both modalities using a variety of widths. Make sure you try both going narrower than the input, and wider than the input, if memory permits. Report the parameter counts, and generate the same three plots as in (6), and discuss.
 
 Varying the input size
 ----
-Now, try varying the input size (input resolution) of your base model (see corresponding sections). 
-- For vision (8,9), you can do this by *downsampling* the input. You can find a list of transformations [here](https://pytorch.org/vision/stable/transforms.html).
-- For language (10,11), you can do this by reducing the vocabulary size.
+Now, try varying the input size (input resolution) of your base model. 
+- For vision, you can do this by *downsampling* the input. You can find a list of transformations [here](https://pytorch.org/vision/stable/transforms.html).
+- For language, you can do this by reducing the vocabulary size.
 
 8. **Vision:** Downsample by resizing the image to a smaller size, and experiment with a few different downsampling rates. Generate the same three plots as above. 
 9. Repeat this for a different transformation, such as cropping. How does this different transformation compare to resizing?
@@ -114,7 +106,7 @@ Putting it all together
 ----
 Now, experiment with different settings combining different input sizes with different depths and widths. 
 
-12. Generate the same three plots as above, reporting the results of your experiments. Do you notice any interesting trends? What combination of input resolution, depth, and width seems to correspond to the best trade-off between accuracy and efficiency? Do you notice differences between latency and FLOPs? Explain your experimental process and discuss your results.
+12. Generate the same three plots as above, reporting the results of your experiments in each modality. Do you notice any interesting trends? What combination of input resolution, depth, and width seems to correspond to the best trade-off between accuracy and efficiency? Do you notice differences between latency and FLOPs? Explain your experimental process and discuss your results.
 
 Grading and submission (10 points)
 ----
