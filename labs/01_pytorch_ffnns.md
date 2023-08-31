@@ -55,9 +55,11 @@ Then the corresponding BoW vector would look like:
 
 ### Vision
 The raw pixel values will work as input for now. 
-We recommended that you normalize values to have mean 0 and std deviation 1.
-Specifically, compute the mean and standard deviation, and update your values as
-new_val = (old_val - mean)/std_dev
+We recommended that you normalize values to have mean 0 and standard deviation 1.
+Specifically, compute the mean and standard deviation of the data, and update your values as:
+$$
+new_val = \frac{old_val - mean}{std_dev}
+$$
 
 Model and Evaluation
 ----
@@ -71,7 +73,7 @@ Build a single-layer feed-forward network with ReLU activations and cross-entrop
 | hidden size  | 512 | 
 | epochs | 2 |
 
-Recommended hidden sizes are 1024 for MNIST and 256 for SST 
+Recommended hidden sizes are 1024 for MNIST and 256 for SST.
 
 Compute classification accuracy for your task.
 1. What accuracy do you obtain on your task, and using what hyperparameters? This will be your "base model."
@@ -79,7 +81,7 @@ Compute classification accuracy for your task.
 Now, implement three methods for benchmarking the efficiency of this model:
 - **Latency:** Measure training time and inference latency. You can simply use `time.time()` in Python around your training loop to get an estimate of training time. For inference latency, measure the average time it takes to classify each example. You should run this a few times, and throw away the first measurement to allow for initial warmup (e.g. caching, etc.) 
 - **Parameter count:** Write a function to compute the number of parameters in your model. This should be a general-purpose function that can be run on any PyTorch model; rather than estimate this in closed form, you should loop over the tensors of parameters in the model and sum their sizes.
-- **FLOPs:** Write a function to compute the number of floating-point operations that need to be performed in order to do inference on one example in your model. This one does not have to be general-purpose, it should be specific to feed-forward networks. This is where many of you will get tripped up.  Please simply explain the approach you took and we will grade based on clarity and reasoning, not specific values.
+- **FLOPs:** Write a function to compute the number of floating-point operations that need to be performed in order to do inference on one example in your model. This one does not have to be general-purpose, it should be specific to feed-forward networks. This is where many of you may get tripped up.  Please simply explain the approach you took and we will grade based on clarity and reasoning, not specific values.
 
 2. What is the exact hardware that you are using to benchmark your code? Report the CPU and RAM, in as much detail as is available from your operating system.
 3. Report the average training time and inference latency of your model. Is the variance high or low? Did you notice any outliers? Was the first iteration of inference slower than the others? Try to explain any phenomena you note.
