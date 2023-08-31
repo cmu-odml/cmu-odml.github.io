@@ -57,7 +57,7 @@ Then the corresponding BoW vector would look like:
 The raw pixel values will work as input for now. 
 We recommended that you normalize values to have mean 0 and standard deviation 1.
 Specifically, compute the mean and standard deviation of the data, and update your values as:
-$$new_val = \frac{old_val - mean}{std_dev}$$
+$$new = \frac{old - mean}{stdev}$$
 
 Model and Evaluation
 ----
