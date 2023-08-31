@@ -61,17 +61,17 @@ $$new = \frac{old - mean}{stdev}$$
 
 Model and Evaluation
 ----
-Build a single-layer feed-forward network with ReLU activations and cross-entropy loss using PyTorch, and train it on the vision and language tasks. You can experiment with a few different settings of hyperparameters to find ones that work reasonably well for each modality. To start, you should be able to get an accuracy of about 97% using the following hyperparameters for MNIST using the Adam optimizer:
+Build a feed-forward network with ReLU activations and cross-entropy loss using PyTorch, and train it on the vision and language tasks. You can experiment with a few different settings of hyperparameters to find ones that work reasonably well for each modality. To start, you should be able to get an accuracy of about 97% using the following hyperparameters for MNIST using the Adam optimizer:
 
 | hyperparameter | value |
 | --- | --- |
 | learning rate | 0.001 |
 | batch size | 64 |
 | hidden layers | 2 |
-| hidden size  | 512 | 
+| hidden size  | 1024 (MNIST), 256 (SST) | 
 | epochs | 2 |
 
-Recommended hidden sizes are 1024 for MNIST and 256 for SST.
+Recommended hidden sizes are 1024 for MNIST and 256 for SST, but document your choices.
 
 Compute classification accuracy for your task.
 1. What accuracy do you obtain on your task, and using what hyperparameters? This will be your "base model."
