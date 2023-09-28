@@ -45,14 +45,14 @@ Now, try varying the number of parameters in your base model. You don't need to 
 Try to come up with a method that will have the smallest negative impact on accuracy. The specific way that you do this will depend on the model. If you are planning on training or fine-tuning models for your project, 
 feel free to re-train or fine-tune with smaller parameter sizes; otherwise, you don't need to train here.
 
-6. Explain how you decided to remove paramters, and justify your decisions. Why did you choose this method over other methods?
-7. Train and evaluate your model using a variety of paramter sizes. Report the same three plots as in (7) above. Discuss your results.
+9. Explain how you decided to remove paramters, and justify your decisions. Why did you choose this method over other methods?
+10. Train and evaluate your model using a variety of paramter sizes. Report the same three plots as in (7) above. Discuss your results.
    
 Putting it all together
 ----
 Now, experiment with different settings combining different input sizes with different parameter counts. 
 
-12. Generate the same three plots as above, reporting the results of your experiments. Do you notice any interesting trends? What combination of input resolution and parameter count seems to correspond to the best trade-off between accuracy and efficiency? Do you notice differences between latency and FLOPs? Explain your experimental process and discuss your results.
+11. Generate the same three plots as above, reporting the results of your experiments. Do you notice any interesting trends? What combination of input resolution and parameter count seems to correspond to the best trade-off between accuracy and efficiency? Do you notice differences between latency and FLOPs? Explain your experimental process and discuss your results.
 
 Grading and submission (10 points)
 ----
