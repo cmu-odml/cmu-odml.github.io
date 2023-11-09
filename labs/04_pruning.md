@@ -239,19 +239,17 @@ Part I Discussion
 Part II: Your Model, Device, and Data
 ---
 
-In this section, you will repeat the simple experiments from Part I on your own model, device, and data. Additionally, you will choose two of three options for practical benefits to your pruned model's accuracy and latency. 
+In this section, you will repeat the simple experiments from Part I on your own model, device, and data. Additionally, you will choose two of three options for practical benefits to your pruned model's accuracy and latency. You may use a different sparsity level, higher or lower than 33%, if it makes sense for your settings. Make sure to report any changes you made and why you made them. Additionally, report any challenges encountered measuring latency or storage on your device. If repeatedly training your model is infeasible, you may use a simplified model or train for fewer epochs, adjusting learning rate accordingly.
 
 8. Required: Repeat Question 6 for your model, on your device and with your data.
-9. Required: Repeat Question 7 for your model, on your device and with your data.
 
-For Questions 8 and 9, you may use a different sparsity level, higher or lower than 33%, if it makes sense for your settings. Make sure to report any changes you made and why you made them. Additionally, report any challenges encountered measuring latency or storage on your device. If repeatedly training your model is infeasible, you may use a simplified model or train for fewer epochs, adjusting learning rate accordingly.
 
 ### Pick two of three
-10.  Implement a structured pruning technique. You may prune dimensions of matrices, attention heads, entire layers, etc. Describe your strategy and report the results in a table, adjusting the "sparsity rate" column and as needed.
+9.  Implement a structured pruning technique. You may prune dimensions of matrices, attention heads, entire layers, etc. Describe your strategy and report the results in a table, adjusting the "sparsity rate" column and as needed.
 
-11.  Conduct a sensitivity analysis of pruning (structured or unstructured) different components of your model. For instance, what happens to your model's performance when you prune input embeddings vs hidden layer weights? Do earlier layers seem more or less important than later layers? You are not required to conduct a thorough study, but you should be able to draw a couple concrete conclusions.
+10.  Conduct a sensitivity analysis of pruning (structured or unstructured) different components of your model. For instance, what happens to your model's performance when you prune input embeddings vs hidden layer weights? Do earlier layers seem more or less important than later layers? You are not required to conduct a thorough study, but you should be able to draw a couple concrete conclusions.
 
-12. Export and run your unpruned and a diverse sample of your pruned models on ONNX runtime. Check out [the PyTorch ONNX docs](https://pytorch.org/docs/stable/onnx.html) and [this page](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html) for reference. Did you run into any challenges? Do you see latency benefits? Was anything surprising? Report inference latency and discuss.
+11. Export and run your unpruned and a diverse sample of your pruned models on an inference runtime (ONNX runtime, TensorRT). Check out [the PyTorch ONNX docs](https://pytorch.org/docs/stable/onnx.html) and [this page](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html) for reference. Did you run into any challenges? Do you see latency benefits? Was anything surprising? Report inference latency and discuss.
 
 Part II Discussion
 ---
