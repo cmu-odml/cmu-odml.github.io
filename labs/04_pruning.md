@@ -214,7 +214,7 @@ ffn_mnist.load_state_dict(ffn_mnist_copy)
 
 Plotting it all together
 ---
-You should report 2 plots, each of which contains a line corresponding to each of the experiments you performed above: pruning without retraining, IMP without rewinding, and IMP with rewinding. The three plots should have:
+You should report 2 plots, each of which contains a line corresponding to each of the experiments you performed above: pruning without retraining, and IMP with rewinding. The two plots should have:
    - **accuracy** on the x axis and **sparsity** on the y axis. 
    - **accuracy** on the x axis and **disk space** on the y axis. 
    - **accuracy** on the x axis and **inference latency** on the y axis. 
