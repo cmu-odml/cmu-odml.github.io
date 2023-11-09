@@ -1,25 +1,26 @@
 Lab 4: Pruning
 ===
-This lab is an opportunity to explore different pruning strategies and settings, with the goal of becoming familiar with unstructured, iterative and non-iterative pruning in PyTorch, and some of the trade-offs of using such an approach for model compression.
+This lab is an opportunity to explore different pruning strategies and settings, with the goal of becoming familiar with unstructured and structured pruning in PyTorch, and some of the trade-offs of using such an approach for model compression.
 
 Throughout this lab, we will use the term **sparsity level** to refer to the percent of the original model's *prunable* weights (**weight parameters, excluding bias parameters**) that have been pruned.
 
-If you are compute-resource-constrained (i.e. your personal laptop takes a really long time to perform a training run with the base model), you can change the hyperparameters somewhat to reduce computational burden -- e.g. training epochs, hidden size, but please clearly report what you did, try to keep the changes minimal, and be consistent throughout the assignment.
+If you are compute-resource-constrained (i.e. your personal laptop takes a really long time to perform a training run with the base model), you may adjust the hyperparameters in Part I to reduce computational burden -- e.g. training epochs, hidden size, but please clearly report what you did, try to keep the changes minimal, and be consistent throughout the assignment.
 
 Preliminaries & Setup
 ---
-0. Share the hardware specs for the machine you will be using to run the experiments in this lab.
-1. Copy over relevant code for training MNIST from Lab 2 (just the "Lab 2" model), including code for evaluation (in particular, accuracy, latency, and size on disk), *but don't train yet*!
+0. Share the hardware specifications and OS information of the machine(s) you will be using to run the experiments in this lab.
+1. Copy over relevant code for training MNIST or SST2 from Lab 3, including code for evaluation (in particular, accuracy, latency, and size on disk), *but do not train yet*!
 
-| hyperparameter  | value |
-| --------------- | ----- |
-| learning rate   | 0.001 |
-| batch size      | 64    |
-| hidden size     | 1024  | 
-| # hidden layers | 2     |
-| training epochs | 2     |
+| hyperparameter  | MNIST | SST2  |
+| --------------- | ----- | ----- |
+| learning rate   | 0.001 | 0.001 |
+| batch size      | 64    | 64    |
+| hidden size     | 1024  | 256   |
+| # hidden layers | 2     | 3     |
+| training epochs | 2     | 2     |
+| input size      | 20x20 | top 5000 |
 
-Recall from Lab 2 that you can measure model size on disk in this way:
+Recall from Lab 3 that you can measure model size on disk in this way:
 
 ```py
 import os
@@ -34,9 +35,9 @@ def print_size_of_model(model, label=""):
 You can then compare model sizes:
 
 ```py
-f=print_size_of_model(model1, "model1")
-q=print_size_of_model(model2, "model2")
-print("{0:.2f} times smaller".format(f/q))
+full=print_size_of_model(model1, "model1")
+pruned=print_size_of_model(model2, "model2")
+print("{0:.2f} times smaller".format(full/pruned))
 ```
 
 2. Initialize your model. Before training, **SAVE** your model's initial (random) weights. You will use them later for iterative pruning
@@ -50,10 +51,10 @@ print("{0:.2f} times smaller".format(f/q))
 | ------- | ------- | ------ | ------- | ------ |
 |     0   |   0.0%  |    ?    |    ?     |    ?    |
 
-Also take a look at your model's `named_parameters()`. You'll need these later (no need to put in the table).
+Also take a look at your model's `named_parameters()`. You will need these later (no need to put in the table).
 
 
-Unstructured magnitude pruning
+Part I: Magnitude pruning on SST2/MNIST
 ---
 First, you will perform global, unstructured magnitude (L1) pruning on the model to a sparsity level of **33%**. Prune just the weight parameters (not biases). 
 You should be able to use the `global_unstructured` pruning method in the PyTorch prune module.
@@ -75,7 +76,7 @@ Take a look at your `model.named_parameters()` again, and your `model.named_buff
     -  for each parameter,
     -  for all pruned parameters overall, and
     -  for the model overall
-   **And report each of these values:** the sparsity level of each parameter, across all pruned parameters, and for the model overall.
+   **And report each of these values:** the sparsity level of each parameter, across all pruned parameters, and for the model overall. Note: only required for your MNIST/SST-2 FFN, not your project model
 5. Write a function to calculate the amount of space that a pruned model takes up when reparameterization is removed and tensors are converted to *sparse* representations.
 
 **Tip:** Note that storage size actually *grows* when we first prune a model. Below we give some pointers on how to actually convert and store the parameters in a sparse format on disk.
@@ -126,7 +127,7 @@ torch.save(sd, "model.pt")
 # measure new size on disk:
 print(f'{os.path.getsize("model.pt")/1e6} MB')
 
-# notice not actually 1/10 of the size but oh well
+# notice the new size is not actually 1/10 of the size... consider why this might be the case
 ```
 
 And, we can load this model and use as normal as well:
@@ -156,7 +157,7 @@ model_copy = deepcopy(model)
 
 Repeated unstructured magnitude pruning
 ---
-Now, keep performing the same unstructured magnitude pruning of 33% of the remaining weights on the same model (without re-training or resetting the model). 
+Now, keep performing the same unstructured magnitude pruning of 33% of the remaining weights on the same model (*without re-training or resetting the model*). 
 You will apply the same function as above with the same 0.33 proportion parameter.
 
 6. Collect values for the rest of this table, keeping in mind that you will need to plot the results later. You might want to keep the values in Pandas DataFrames (see the section on **plotting it all together** below.) Sparsity reported should be the percentage of *prunable* parameters pruned. 
@@ -173,16 +174,6 @@ You will apply the same function as above with the same 0.33 proportion paramete
 |     7   |         |        |         |        |
 |     8   |         |        |         |        |
 |    10   |         |        |         |        |
-|    11   |         |        |         |        |
-|    12   |         |        |         |        |
-|    13   |         |        |         |        |
-|    14   |         |        |         |        |
-|    15   |         |        |         |        |
-|    16   |         |        |         |        |
-|    17   |         |        |         |        |
-|    18   |         |        |         |        |
-|    19   |         |        |         |        |
-|    20   |         |        |         |        |
 
 **Tip:** Evaluating pruned models. *Assuming you have an e.g. `evaluate()` function that takes in your (pruned) model, dataloader, and possibly additional arguments*, you could use a function similar to this to evaluate models without the overhead of applying parameter masks on-the-fly (this can be useful especially if your `evaluate` function returns latency information).
 ```py
@@ -195,7 +186,7 @@ def sparse_evaluate(model, dataloader, num_classes=2):
     copy_params = [(model_copy.layers[0], 'weight'),
                        (model_copy.layers[1], 'weight'),
                        (model_copy.out, 'weight')]
-    # (we assume the same model architecture as the MNIST architecture we specify above)
+    # (we assume the same model architecture as the MNIST or SST-2 architecture we specify above)
     for p in copy_params:
         prune.remove(*p)
     
@@ -205,17 +196,13 @@ def sparse_evaluate(model, dataloader, num_classes=2):
 
 Iterative magnitude pruning (IMP)
 ---
-Now, repeat the same process as above, but re-train the remaining weights each time (using the same hyperparameters). 
-You will experiment with two settings: Re-training without rewinding, and re-training with rewinding. Implementation-wise,
-this should look just like the above, with some extra steps (training, and optionally rewinding) between each pruning step.
+Now, repeat the same process as above, but re-train the remaining weights each time (using the same hyperparameters). Importantly, you will *rewind* your model's remaining weights to their initialization in between iterations. Implementation-wise, this should look just like the above, with some extra steps (training and rewinding) between each pruning step.
 
-7. **IMP without rewinding:** Continue training the unpruned weights starting from their current value at each iteration, the value that was used to determine which weights to prune from the last iteration. Collect all the same numbers as specified in the table in the previous section. You should use the same training hyperparameters.
-
-8. **IMP with rewinding:** Recall from class that *rewinding* refers to resetting the weights to an earlier value, rather than the most recent value during iterative magnitude pruning. Implement retraining with rewinding to the weights' values at **model initialization**, before any training or pruning was performed. (This is why we asked you to save a copy of the initialized but untrained model weights in the beginning of the lab!) You should use the same training hyperparameters. Collect all the same numbers as specified in the table in the previous section.
+7. **IMP with rewinding:** Recall from class that *rewinding* refers to resetting the weights to an earlier value, rather than the most recent value during iterative magnitude pruning. Implement retraining with rewinding to the weights' values at **model initialization**, before any training or pruning was performed. (This is why we asked you to save a copy of the initialized but untrained model weights in the beginning of the lab!) You should use the same training hyperparameters each time. Collect all the same numbers as specified in the table in the previous section, putting them into a new table.
 
 In your iterative magnitude pruning training loop, there are some special considerations you will need to make in order to get things working properly:
 
-Recall that, after each round of pruning, we want to *reset* all remaining weights to their values at initialization. For example, if you have a model's `state_dict()` saved at the relative path `"data/model_init.pt"`, you can use `torch.load("data/model_init.pt")` to reload the dict. 
+After each round of pruning, we want to *reset* all remaining weights to their values at initialization. For example, if you have a model's `state_dict()` saved at the relative path `"data/model_init.pt"`, you can use `torch.load("data/model_init.pt")` to reload the dict. 
 
 Now, because the exact parameter names do not match the state dict that of the (unpruned) model at initialization, you will have to go out of your way to align them. Assuming you have e.g. `prune_param_list = ['layers.0.weight', 'layers.1.weight', 'out.weight']`, you can use:
 ```py
@@ -227,7 +214,7 @@ ffn_mnist.load_state_dict(ffn_mnist_copy)
 
 Plotting it all together
 ---
-You should report 3 plots, each of which contains a line corresponding to each of the experiments you performed above: pruning without retraining, IMP without rewinding, and IMP with rewinding. The three plots should have:
+You should report 2 plots, each of which contains a line corresponding to each of the experiments you performed above: pruning without retraining, IMP without rewinding, and IMP with rewinding. The three plots should have:
    - **accuracy** on the x axis and **sparsity** on the y axis. 
    - **accuracy** on the x axis and **disk space** on the y axis. 
    - **accuracy** on the x axis and **inference latency** on the y axis. 
@@ -245,15 +232,36 @@ plt.legend()
 plt.show()
 ```
 
-Discussion
+Part I Discussion
 ---
-- Choose two of the plots, describe the trends they depict, and compare and contrast the plots. Are there trends that you expected, or didn't expect, based on discussions and lectures in class, and/or your experience? For example, is there a clear drop-off in performance at a certain sparsity level, and does that change across methods? Do latency and space on disk correspond to your expectations, why or why not?
-- In 4-5 sentences, pose one small follow-up experiment that you might run, based on these initial results. Your motivation (based on these results), hypothesis and methodology for testing that hypothesis should be clear. You do not need to run the experiment. (This can overlap with extra credit, if you choose to implement extra credit.)
+- Describe two trends depicted in your plots, and compare and contrast them. Are there trends that you expected, or didn't expect, based on discussions and lectures in class, and/or your experience? For example, is there a clear drop-off in performance at a certain sparsity level, and does that change across methods? Do latency and space on disk correspond to your expectations, and why or why not?
+
+Part II: Your Model, Device, and Data
+---
+
+In this section, you will repeat the simple experiments from Part I on your own model, device, and data. Additionally, you will choose two of three options for practical benefits to your pruned model's accuracy and latency. 
+
+8. Required: Repeat Question 6 for your model, on your device and with your data.
+9. Required: Repeat Question 7 for your model, on your device and with your data.
+
+For Questions 8 and 9, you may use a different sparsity level, higher or lower than 33%, if it makes sense for your settings. Make sure to report any changes you made and why you made them. Additionally, report any challenges encountered measuring latency or storage on your device. If repeatedly training your model is infeasible, you may use a simplified model or train for fewer epochs, adjusting learning rate accordingly.
+
+### Pick two of three
+10.  Implement a structured pruning technique. You may prune dimensions of matrices, attention heads, entire layers, etc. Describe your strategy and report the results in a table, adjusting the "sparsity rate" column and as needed.
+
+11.  Conduct a sensitivity analysis of pruning (structured or unstructured) different components of your model. For instance, what happens to your model's performance when you prune input embeddings vs hidden layer weights? Do earlier layers seem more or less important than later layers? You are not required to conduct a thorough study, but you should be able to draw a couple concrete conclusions.
+
+12. Export and run your unpruned and a diverse sample of your pruned models on ONNX runtime. Check out [the PyTorch ONNX docs](https://pytorch.org/docs/stable/onnx.html) and [this page](https://pytorch.org/tutorials/advanced/super_resolution_with_onnxruntime.html) for reference. Did you run into any challenges? Do you see latency benefits? Was anything surprising? Report inference latency and discuss.
+
+Part II Discussion
+---
+- Describe at least two trends observations from Part II. Are there trends that you expected, or didn't expect, based on discussions and lectures in class, and/or your experience?
+- In 4-5 sentences, pose one small follow-up experiment that you might run, based on your initial results. Your motivation (based on these results), hypothesis and methodology for testing that hypothesis should be clear. You do not need to run the experiment. (This can overlap with extra credit, if you choose to implement it.)
 
 Extra Credit
 ---
 #### 1. Implement a custom pruning method [1 point]
-Implement an additional pruning method, and report your results. For example, you might implement structured pruning, second-order pruning, or anything else. Be creative! In order to get full credit, you must clearly describe your approach, and why you think it should work (but it doesn't have to work better than L1 magnitude pruning, as long as it's well-motivated). You should apply your approach in the iterative magnitude pruning paradigm, perform multiple iterations of pruning, and plot the results. Discuss how these results compare to the other methods you implemented in this lab.
+Implement an additional pruning method, and report your results. For example, you might implement second-order pruning, or another structured pruning method such as [CoFi](https://github.com/princeton-nlp/cofipruning). Be creative! In order to get full credit, you must clearly describe your approach, and why you think it should work (but it doesn't have to work better than L1 magnitude pruning, as long as it's well-motivated). You should apply your approach in the iterative magnitude pruning paradigm, perform multiple iterations of pruning, and plot the results. Discuss how these results compare to the other methods you implemented in this lab.
 
 #### 2. Combining quantization and pruning [1 point]
 Combine quantization from Lab 2 with iterative magnitude pruning from this lab, and report your results in terms of accuracy and size on disk. You can combine the approaches however you wish, but to get full credit you must clearly describe what type of quantization you used and how exactly you combined the approaches, why you think that should work, and discuss your results. You only have to report results for one sparsity level. 
