@@ -40,7 +40,7 @@ This is ok, but:
 Multiply energy draw by inference time to get an estimate of energy required per inference (you can average over input size).
 
 5. **Benchmark the first model**
-  * How many times do you need to run inference to get a stable estimate?
+  * How many times do you need to run inference to get a stable estimate? Report the standard deviation in the table below.
   * What batch size did you choose, and why?
   * When did you start/stop measuring power, and why?
   * If you are able to perform measurement in software and at the wall, are there any differences between the numbers? If so, is there a clear pattern that emerges? Try to explain your observations.
@@ -60,7 +60,7 @@ Multiply energy draw by inference time to get an estimate of energy required per
 | Change 1       |          |      |   |               |         |
 | Change 2       |          |      |   |               |         |
 
-Note that Columns 1, 2 and 3 require clear justification and details, included as answers to questions (1), (2), (4). It should be very clear which columns correspond to which model/hardware/measurement settings outlined earlier.
+Note that each column requires clear justification and details for what exactly you measured and how, included as answers to questions 1-5. It should be very clear which columns correspond to which model/hardware/measurement settings outlined earlier.
 
 Converting energy to estimated carbon emissions
 ---
