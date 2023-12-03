@@ -1,4 +1,4 @@
-Lab 4: Energy & Carbon
+Lab 5: Energy & Carbon
 ===
 In this lab you will gain experience measuring the inference energy use of ML models on different hardware platforms, and converting those measurements into estimated carbon emissions.
 -  **You will do this lab as a group project with your class project team**, and you only need to submit a single report jointly for your team.
