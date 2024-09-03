@@ -163,7 +163,7 @@ Now, experiment with different settings combining different input sizes with dif
 
 Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 10 points, graded as follows: 
 
-- **Submission [2 points]:** Assignment is submitted on time.
+- **Submission [2 points]:** Assignment is submitted on time and contains the relevant components. 
 
 - **Basic requirements [5 points]:** Answers to all the questions (including all requested plots) are included in the write-up.
 
