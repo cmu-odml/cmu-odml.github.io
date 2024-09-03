@@ -2,9 +2,9 @@
 
 ## 1. Assignment Objectives
 
-In this lab you will build a basic feed-forward neural network for classification in PyTorch on CPU, and train and evaluate that model in terms of efficiency and classification accuracy on a simple language or vision task. The goals of this exercise are: 
+In this lab you will build a basic feed-forward neural network for classification in PyTorch on CPU, and train and evaluate that model in terms of efficiency and classification accuracy on a simple language or vision task. The goals of this exercise are to: 
 
- 1. Proficiency training and evaluating basic feed-forward neural network architectures for language or computer vision classifcation tasks in PyTorch.
+ 1. Demonstrate proficiency training and evaluating basic feed-forward neural network architectures for language or computer vision classifcation tasks in PyTorch.
  2. Implement methods for benchmark basic efficiency metrics of: Latency, parameter count, and FLOPs.
  3. Experiment with varying model size, depth, and input resolution; and analyze the impacts on efficiency and accuracy.
 
@@ -22,6 +22,7 @@ We recommend installing [PyTorch](https://pytorch.org/get-started/locally/) usin
 For this assignment, select **one** of the following tasks as relevant to your interests or project.
 
 #### Language: Sentiment Classification
+
 For a language task we will use the [Stanford Sentiment Treebank (SST-2)](https://huggingface.co/datasets/sst2) dataset for sentiment classification. 
 Examples in this dataset consist of tokenized English text labeled with binary categories indicating the binary sentiment (positive/negative) of the sentence. 
 The data files we will use for this class are available [here](https://dl.fbaipublicfiles.com/glue/data/SST-2.zip).
@@ -98,7 +99,7 @@ Now, implement three methods for benchmarking the model efficiency:
    - For inference latency, measure the average time it takes to classify each example. You should run this a few times, and throw away the first measurement to allow for initial warmup (e.g. caching, etc.) 
 
 2.  **Parameter Count:**  Manually compute the number of trainable parameters in your model, and write a function that gathers the number of trainable parameters in PyTorch. 
-    - Provide a closed form for Manually compute the number of trainable parameters
+    - Provide a closed form for manually computing the number of trainable parameters in your feed-forward network.
     - This should be a general-purpose function that can be run on any PyTorch model. Simply, iterate through the tensors for each model parameters in the model and sum their sizes. 
     
 
@@ -119,7 +120,7 @@ Now, implement three methods for benchmarking the model efficiency:
    * Is the variance high or low? Did you notice any outliers? Was the first iteration of inference slower than the others?
    * Explain any phenomena you note.
 
-4. Report the parameter count of the model as manually calculated; and as determined by your code solution. Does this align with your expectations? Why or why not? 
+4. Report the parameter count of the model as manually calculated; and as determined by your programatic code solution. Does this align with your expectations? Why or why not? 
 
 5. Report the number of FLOPs that your model requires to perform single-batch inference.
 
@@ -140,11 +141,11 @@ Now, try varying the depth and width of your base model. How do depth and width 
 
 ### Varying the input size
 
-Now, try varying the input size (input resolution) of your base model (see corresponding sections). 
+Now, try varying the input size (input resolution) of your base model (see corresponding sections). Answer the question that corresponds to the task selected in Section 2.
  
 8. **Vision:** Downsample by resizing the image to a smaller size, and experiment with a few different downsampling rates. 
     - Generate the same three plots as in Question 6.
-    -  Repeat this for a [different transformation](https://pytorch.org/vision/stable/transforms.html), such as cropping. How does this different transformation compare to resizing?
+    - Repeat this for a [different transformation](https://pytorch.org/vision/stable/transforms.html), such as cropping. How does this different transformation compare to resizing?
 
 9. **Language:** Downsample by reducing the vocabulary to the top $k$ most frequent words, for a few different values of $k$.
     - Generate the same three plots as in Question 6.
@@ -154,9 +155,9 @@ Now, try varying the input size (input resolution) of your base model (see corre
 
 Now, experiment with different settings combining different input sizes with different depths and widths. 
 
-10. Generate the same three plots as above, reporting the results of your experiments. 
-     - Do you notice any interesting trends? What combination of input resolution, depth, and width seems to correspond to the best trade-off between accuracy and efficiency? Does variation of input size or model size have a larger impact on efficiency or performance?  Do you notice differences between different efficiency metrics latency and FLOPs? 
-     - Explain your experimental process and discuss your results.
+10. Generate the same three plots as above, reporting the results of your experiments. Explain your experimental process. Discuss the relation and tradeoffs between various efficiency metrics and model perforemance.
+     -  What combination of input resolution, depth, and width seems to correspond to the best trade-off between accuracy and efficiency? 
+     - Do you notice any interesting trends? Does variation of input size or model size have a larger impact on efficiency or performance?  Do you notice differences between various efficiency metrics (e.g. latency vs FLOPs)? 
 
 ## Grading and submission (10 points)
 
