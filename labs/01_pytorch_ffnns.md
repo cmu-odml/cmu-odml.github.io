@@ -12,7 +12,7 @@ We recommend installing [PyTorch](https://pytorch.org/get-started/locally/) usin
 
 *Note*: This is an individual lab to be done on your personal laptop.
 
-**DUE: 11:59 PM EDT on September 10** 
+**DUE: 11:59 PM EDT on Friday, September 13** 
 
 
 ## 2. Model Training, Evaluation and Efficiency Benchmarking
