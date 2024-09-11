@@ -15,7 +15,7 @@ The main goals of this exercise are:
 
 > **Note**: This is a group lab assignment; you will submit one report per project group. 
 <br><br> 
-We recommend that you submit your report as a pdf froma markdown file (you can use an online collaborative editor like https://stackedit.io/ or https://hackmd.io/). We **do not** want you to submit _all_ of your code (leaving us with 40 pages of code and outputs and delaying your grading). Please only show us necessary code snippets where explicitly requested. You are free to use this file as a starting point.
+We require that you submit your report as a pdf. We **do not** want you to submit _all_ of your code (leaving us with 40 pages of code and outputs and delaying your grading). Please only show us necessary code snippets where explicitly requested. You are free to use this file as a starting point.
 
 Preliminaries
 ----
