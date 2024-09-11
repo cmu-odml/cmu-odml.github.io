@@ -81,7 +81,7 @@ Benchmarking Base Model [4 points]
 Varying the input size [2 points]
 ----
 
-8. [1.5 points] Now, try varying the input size (input resolution) of your base model. Downsample using two different methods, across 3 different resolutions. Report the parameter counts, FLOPs, and inference latency, and generate three plots (each plot showing both methods of downsizing) for each of the following:
+8. [1.5 points] Now, try varying the input size (input resolution) of your base model. Downsample using two different methods, across 2 different resolutions. Report the parameter counts, FLOPs, and inference latency, and generate three plots (each plot showing both methods of downsizing) for each of the following:
 
     - FLOPs on the x axis and accuracy on the y axis
     - Latency on the x axis and accuracy on the y axis
