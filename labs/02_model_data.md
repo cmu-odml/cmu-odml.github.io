@@ -126,9 +126,9 @@ Report the following:
 13. [0.5 points] Pounds or grams of carbon are not very intuitive measures. It can be useful to find points of comparison, emissions due to other common activities to compare to. Do some research to find some emissions of other activities to provide a point of reference. Are you suprised by the results? Why or why not?
 
 
-Extra Credit: Deploying on Hardware [1 point]
+Extra Credit: Deploying on Hardware [2 points]
 ----
-14. If you benchmarked everything on the hardware you plan to use for your final project, you will receive 1 point of extra credit. Please provide a brief description how you deployed your model(s) on device, and any challenges you faced.
+14. If you benchmarked everything on the hardware you plan to use for your final project, you will receive 2 points of extra credit. Please provide a brief description how you deployed your model(s) on device, and any challenges you faced.
 
 
 Contributions [0.5 points]
@@ -144,8 +144,8 @@ Contributions [0.5 points]
 | Member 4    |               |
 
 
-Grading and submission (10 points + 1 point extra credit)
+Grading and submission (10 points + 2 points extra credit)
 ----
-Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 11 total possible points, with 10 points assigned for the main questions and 1 point assigned for the extra credit question.
+Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 12 total possible points, with 10 points assigned for the main questions and 2 points assigned for the extra credit question.
 
 
