@@ -146,6 +146,6 @@ Contributions [0.5 points]
 
 Grading and submission (10 points + 1 point extra credit)
 ----
-Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 10 points, with 1 point extra credit available.
+Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 11 total possible points, with 10 points assigned for the main questions and 1 point assigned for the extra credit question.
 
 
