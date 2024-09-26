@@ -1,7 +1,9 @@
-Lab 2: Benchmarking Model, Data & Energy
+Lab 2: Benchmarking Model, Data, Hardware & Energy
 ===
-In this lab you will extend the same benchmarking analysis from Lab 1 to a model, dataset, and hardware platform that you will be using for your class project. You will also measure the inference energy of the model and convert those measurements into estimated carbon emissions.
 
+In this lab you will extend the same benchmarking analysis from Lab 1 to a model, dataset, and (optionally) hardware platform that you will be using for your class project. You will also measure the inference energy of the model on different hardware platforms, and convert those measurements into estimated carbon emissions.
+
+> Note: While you are not required to have your model deployed on the hardware you plan to use for your final project at this stage, you are strongly encouraged to do it (there is extra credit available) so that you don't have to work during Fall Break (and we don't want you to)! We do expect you to have your model deployed on device in time for the project sharing classes right after Fall Break (10/22 and 10/24).
 
 We do not expect that you will be re-implementing the model from scratch. Depending on your project, you may be working with an existing model that you plan to optimize or fine-tune.
 
@@ -44,7 +46,7 @@ Base Model and Evaluation [1 point]
 Benchmarking Base Model [4 points]
 ----
 
-3. [1.5 points] Now, implement three methods for benchmarking the efficiency of this model. Explain your approach. Show us only the relevant code snippets for each method.
+3. [1.5 points] Now, implement three methods for benchmarking the efficiency of this model. Explain your approach. If your approach for measuring inference latency is different for your hardware, explain how you measured inference latency on your device. If you are doing it using code, show us only the relevant code snippets for each method.
 
     - **Inference Latency:** Measure the average time it takes to classify each example. You should run this a few times, and throw away the first measurement to allow for initial warmup (e.g. caching, etc.) 
 
@@ -105,12 +107,15 @@ You don't need to do anything fancy, you just need to explain what you did and w
 Measuring Energy Use [1 point]
 ----
 
-At this stage of the project, we do not expect you to have deployed your models onto the hardware you plan to use for your final project. For this lab, you are expected to measure energy using [CodeCarbon](https://github.com/mlco2/codecarbon). 
+At this stage of the project, we do not expect you to measure your energy utilization on the hardware you plan to use for your final project. For this lab, you are expected to measure energy using [CodeCarbon](https://github.com/mlco2/codecarbon).
+
    
-12. [0.5 points] For your base model, any one model with varied input size, and any one model with a varied number of parameters, measure the energy use of a single inference using CodeCarbon. You can measure this by running multiple inferences and averaging the results.
+12. [0.5 points] For your base model, any one model with varied input size, and any one model with a varied number of parameters, measure the energy use of a single inference using CodeCarbon. You can measure this by running multiple inferences and averaging the results. You are free to run this on your local machine or your project hardware. Please specify the hardware you are using.
 
 
 Report the following:
+
+**Hardware platform:** __________
 
 | Model | Input size | Number of parameters | Energy (kWh) | Carbon emissions (kg) |
 |-------|------------|----------------------|--------------|-----------------------|
@@ -122,10 +127,15 @@ Report the following:
 13. [0.5 points] Pounds or grams of carbon are not very intuitive measures. It can be useful to find points of comparison, emissions due to other common activities to compare to. Do some research to find some emissions of other activities to provide a point of reference. Are you suprised by the results? Why or why not?
 
 
+Extra Credit: Deploying on Hardware [2 points]
+----
+14. If you benchmarked everything on the hardware you plan to use for your final project, you will receive 2 points of extra credit. Please provide a brief description how you deployed your model(s) on device, and any challenges you faced.
+
+
 Contributions [0.5 points]
 ----
 
-14. [0.5 points] Write down each team member's contributions to this lab by filling out the table below.
+15. [0.5 points] Write down each team member's contributions to this lab by filling out the table below.
 
 | Team Member | Contributions |
 |-------------|---------------|
@@ -135,8 +145,8 @@ Contributions [0.5 points]
 | Member 4    |               |
 
 
-Grading and submission (10 points)
+Grading and submission (10 points + 2 points extra credit)
 ----
-Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 10 points. 
+Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 12 total possible points, with 10 points assigned for the main questions and 2 points assigned for the extra credit question.
 
 
