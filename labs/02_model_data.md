@@ -1,4 +1,4 @@
-Lab 2: Benchmarking Model, Data & Energy
+Lab 2: Benchmarking Model, Data, Hardware & Energy
 ===
 
 In this lab you will extend the same benchmarking analysis from Lab 1 to a model, dataset, and (optionally) hardware platform that you will be using for your class project. You will also measure the inference energy of the model on different hardware platforms, and convert those measurements into estimated carbon emissions.
