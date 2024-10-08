@@ -304,13 +304,13 @@ and;
 ## Extra Credit:
 This assignment includes two opportunities for extra credit.
 
-### 1. Benchmarking mixed precision training [0.5 points]
+### 1. Benchmarking mixed precision training [1 points]
 Add an additional comparison to your results table using [automatic mixed precision training](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html).
 This requires access to appropriate hardware that supports mixed-precision training (either a personal or lab GPU or via Colab).
 
 This should add 4 lines to your table: one for each model and dataset. You don't need to use the same hardware here as above, just clearly specify either way.
 
-### 2. Module-by-module sensitivity analysis [2 points]
+### 2. Module-by-module sensitivity analysis [1 points]
 [Start here](https://pytorch.org/blog/quantization-in-practice/#sensitivity-analysis).
 1. Analyze accuracy and inference time in both Lab 2 models from quantizing just one module or layer at a time. Your results will depend in part on the structure of your model; looping through the `named_modules` as in the documentation code will include modules as well as "leaf" layers.
 2. Analyze accuracy and inference time in both Lab 2 models from quantizing *all but one* layer at a time. *Hint: you should loop through only modules that do not have child modules themselves*
