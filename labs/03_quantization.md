@@ -261,113 +261,16 @@ and;
 ## Extra Credit:
 This assignment includes two opportunities for extra credit.
 
-### 1. Benchmarking mixed precision training [1 points]
+### 1. Benchmarking mixed precision training [1 point]
 Add an additional comparison to your results table using [automatic mixed precision training](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html).
 This requires access to appropriate hardware that supports mixed-precision training (either a personal or lab GPU or via Colab).
 
 This should add 4 lines to your table: one for each model and dataset. You don't need to use the same hardware here as above, just clearly specify either way.
 
-### 2. Module-by-module sensitivity analysis [1 points]
+### 2. Module-by-module sensitivity analysis [1 point]
 [Start here](https://pytorch.org/blog/quantization-in-practice/#sensitivity-analysis).
 1. Analyze accuracy and inference time in both Lab 2 models from quantizing just one module or layer at a time. Your results will depend in part on the structure of your model; looping through the `named_modules` as in the documentation code will include modules as well as "leaf" layers.
 2. Analyze accuracy and inference time in both Lab 2 models from quantizing *all but one* layer at a time. *Hint: you should loop through only modules that do not have child modules themselves*
-
-<!-- ### 3. Quantize your Feedforward models from Lab 1 to Int8 Using Your Implementation from Exercise 1
-1. The `QuantizedLinear` nn.module provided below can be used as a replacement for `nn.Linear`. Methods for loading quantized weights are provided in the class definition -- the module accepts `qint8` weights and `fp32` biases.
-2. Analyze the performance and latency of your implementation as compared with PyTorch's native quantization methods.
-
-
-
-```python
-import torch
-from torch import nn
-from typing import Optional
-
-
-torch.backends.quantized.engine = 'fbgemm'
-torch.manual_seed(0)
-
-
-class QuantizedLinear(nn.Module):
-  """ Adapted from: https://github.com/pytorch/pytorch/blob/main/torch/ao/nn/quantized/modules/linear.py"""
-  def __init__(self, in_features, out_features, scale=1.0, zero_point=0,, bias=True, dtype=torch.qint8):
-    super().__init__()
-
-    self.in_features = in_features
-    self.out_features = out_features
-    bias = None
-
-    self.scale = 1.0
-    self.zero_point = zero_point
-
-    bias = torch.zeros(out_features, dtype=torch.float)
-    weight_q8 = torch._empty_affine_quantized(
-        [out_features, in_features], scale=1, zero_point=0, dtype=torch.qint8)
-
-    self._packed_params = torch.ops.quantized.linear_prepack(weight_q8, bias)
-
-  def set_weight_bias(self, weight_q8, bias):
-    self._packed_params = torch.ops.quantized.linear_prepack(weight_q8, bias)
-
-  def forward(self, x_quint8):
-    return torch.ops.quantized.linear(
-        x_quint8, self._packed_params, self.scale, self.zero_point)
-
-  ### Nothing to See Here
-  def _weight_bias(self):
-      return self._packed_params._weight_bias()
-
-  def weight(self):
-      return self._weight_bias()[0]
-
-  def bias(self):
-      return self._weight_bias()[1]
-
-  def set_weight_bias(self, w: torch.Tensor, b: Optional[torch.Tensor]) -> None:
-      self._packed_params.set_weight_bias(w, b)
-
-  def _save_to_state_dict(self, destination, prefix, keep_vars):
-      super()._save_to_state_dict(destination, prefix, keep_vars)
-      destination[prefix + 'scale'] = torch.tensor(self.scale)
-      destination[prefix + 'zero_point'] = torch.tensor(self.zero_point)
-
-  def _load_from_state_dict(self, state_dict, prefix, local_metadata, strict,
-                            missing_keys, unexpected_keys, error_msgs):
-      self.scale = float(state_dict[prefix + 'scale'])
-      state_dict.pop(prefix + 'scale')
-
-      self.zero_point = int(state_dict[prefix + 'zero_point'])
-      state_dict.pop(prefix + 'zero_point')
-
-      super()._load_from_state_dict(
-          state_dict, prefix, local_metadata, False,
-          missing_keys, unexpected_keys, error_msgs)
-```
-
-
-
-
-```python
-class YourFFModel(nn.Module):
-  """
-  Here is a template model utilizing the QuantizedLinear nn.Module
-  """
-
-  def __init__(self):
-    super().__init__()
-    self.layer1 = QuantizedLinear(in_features=256, out_features=256)
-    self.layer2 = QuantizedLinear(in_features=256, out_features=10)
-
-  def forward(self, input):
-    out = self.q8_layer1(input)
-    out = nn.functional.relu(out)
-    out = self.q8_layer2(input)
-    out = nn.functional.relu(out)
-    return out
-
-model = YourFFModel()
-
-``` -->
 
 Contributions [0.5 points]
 ----
@@ -382,7 +285,7 @@ Write down each team member's contributions to this lab by filling out the table
 | Member 4    |               |
 
 
-## Grading and submission (10 points + 2.5 extra credit)
+## Grading and submission (10 points + 2 extra credit)
 ----
 Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 10 points
 (or 10% of your final grade for the class) with a total possible points of 12.5 with extra credit
