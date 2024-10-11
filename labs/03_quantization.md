@@ -244,17 +244,28 @@ Apply a form of quantization, across **two** different precisions, to the model 
 
 ### **Discussion:**
 
-[1 point] Observations
-----
+#### [1 point] Observations
 Describe and discuss your observations, reported in the table that you  generated in Exercise 3.
 You might analyze differences across quantization precisions, differences in memory or latency etc.
 Choose **two** axes of interest and discuss each in detail.
 
-[1 point] Future work
-----
+#### [1 point] Future work
 Based on the results and observation, **pose a follow-up question related to this observation** (a research question or hypothesis) that is unanswered by the work in this assignment,
 and;
 **Describe in detail an experiment of set of experiments that you might perform** in order to answer that question. You do not need to run the experiments, just describe how you might go about answering or at least helping to elicidate an answer to the question.
+
+
+Contributions [0.5 points]
+----
+
+Write down each team member's contributions to this lab by filling out the table below.
+
+| Team Member | Contributions |
+|-------------|---------------|
+| Member 1    |               |
+| Member 2    |               |
+| Member 3    |               |
+| Member 4    |               |
 
 
 
@@ -271,19 +282,6 @@ This should add 4 lines to your table: one for each model and dataset. You don't
 [Start here](https://pytorch.org/blog/quantization-in-practice/#sensitivity-analysis).
 1. Analyze accuracy and inference time in both Lab 2 models from quantizing just one module or layer at a time. Your results will depend in part on the structure of your model; looping through the `named_modules` as in the documentation code will include modules as well as "leaf" layers.
 2. Analyze accuracy and inference time in both Lab 2 models from quantizing *all but one* layer at a time. *Hint: you should loop through only modules that do not have child modules themselves*
-
-Contributions [0.5 points]
-----
-
-Write down each team member's contributions to this lab by filling out the table below.
-
-| Team Member | Contributions |
-|-------------|---------------|
-| Member 1    |               |
-| Member 2    |               |
-| Member 3    |               |
-| Member 4    |               |
-
 
 ## Grading and submission (10 points + 2 extra credit)
 ----
