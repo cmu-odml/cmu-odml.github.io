@@ -242,7 +242,7 @@ Apply a form of quantization, across at least **two** different precisions, to t
 |  Non-quantized precision     |                 |              |                        |
 | `precision 1`  |                 |              |                        |
 | `precision 2`  |                 |              |                        |
-| `precision 3` (optiona) |      |      |      |
+| `precision 3` (optional) |      |      |      |
 
 
 ### **Discussion:**
