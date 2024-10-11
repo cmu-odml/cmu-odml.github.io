@@ -287,6 +287,5 @@ This should add 4 lines to your table: one for each model and dataset. You don't
 2. Analyze accuracy and inference time in both Lab 2 models from quantizing *all but one* layer at a time. *Hint: you should loop through only modules that do not have child modules themselves*
 
 ## Grading and submission (10 points + 2 extra credit)
-----
 Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 10 points
-(or 10% of your final grade for the class) with a total possible points of 12.5 with extra credit
+(or 10% of your final grade for the class) with a total possible points of 12 with extra credit
