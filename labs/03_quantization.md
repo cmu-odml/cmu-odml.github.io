@@ -242,7 +242,7 @@ Apply a form of quantization, across **two** different precisions, to the model 
 | `precision 2`  |                 |              |                        |
 
 
-## **Discussion:**
+### **Discussion:**
 
 [1 point] Observations
 ----
