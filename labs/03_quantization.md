@@ -231,7 +231,7 @@ Take a look at [PyTorch's Introduction to Quantization](https://pytorch.org/blog
 
 ### [2 points] C. Quantizing your model, on your device
 
-Apply a form of quantization, across **two** different precisions, to the model you are planning to use for your course project, on the target device. You do not have to quantize in PyTorch, i.e if your hardware/platform's runtime or execution engine supports quantization you can use that as well.
+Apply a form of quantization, across at least **two** different precisions, to the model you are planning to use for your course project, on the target device. You do not have to quantize in PyTorch, i.e if your hardware/platform's runtime or execution engine supports quantization you can use that as well.
 
 1. Report numbers in the table below.
 2. If you were unable to quantize your model, discuss sources of difficulty and challenges in implementation or deployment. *Note: This situation will be rare and requires detailed technical justification.*
@@ -242,6 +242,7 @@ Apply a form of quantization, across **two** different precisions, to the model 
 |  Non-quantized precision     |                 |              |                        |
 | `precision 1`  |                 |              |                        |
 | `precision 2`  |                 |              |                        |
+| `precision 3` (optiona) |      |      |      |
 
 
 ### **Discussion:**
