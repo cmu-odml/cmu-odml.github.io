@@ -7,6 +7,8 @@ The main goals of this exercise are:
  2. Practical implementation use of quantization for your project
  3. Understand the performance-efficiency tradeoffs when using different levels of quantization
 
+**DUE DATE: Nov 1, 2024**
+
 ## [2 points] Exercise 1: Implement Quantization from Scratch
 
 Now, we will implement quantization of PyTorch Tensors.
