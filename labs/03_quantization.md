@@ -283,8 +283,8 @@ This should add a line to your table. You don't need to use the same hardware he
 
 ### 2. Module-by-module sensitivity analysis [1 point]
 [Start here](https://pytorch.org/blog/quantization-in-practice/#sensitivity-analysis).
-1. Analyze accuracy and inference time in both Lab 2 models from quantizing just one module or layer at a time. Your results will depend in part on the structure of your model; looping through the `named_modules` as in the documentation code will include modules as well as "leaf" layers.
-2. Analyze accuracy and inference time in both Lab 2 models from quantizing *all but one* layer at a time. *Hint: you should loop through only modules that do not have child modules themselves*
+1. Analyze accuracy and inference time in the SST/MNIST model from quantizing just one module or layer at a time. Your results will depend in part on the structure of your model; looping through the `named_modules` as in the documentation code will include modules as well as "leaf" layers.
+2. Analyze accuracy and inference time in the SST/MNIST model from quantizing *all but one* layer at a time. *Hint: you should loop through only modules that do not have child modules themselves*
 
 ## Grading and submission (10 points + 2 extra credit)
 Submit your answers to all the above questions to Canvas as a write-up in pdf format. This assignment is worth 10 points
