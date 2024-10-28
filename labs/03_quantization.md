@@ -279,7 +279,7 @@ This assignment includes two opportunities for extra credit.
 Add an additional comparison to your results table using [automatic mixed precision training](https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html).
 This requires access to appropriate hardware that supports mixed-precision training (either a personal or lab GPU or via Colab).
 
-This should add 4 lines to your table: one for each model and dataset. You don't need to use the same hardware here as above, just clearly specify either way.
+This should add a line to your table. You don't need to use the same hardware here as above, just clearly specify either way. Also discuss the results of how AMP compared to the other quantization techniques.
 
 ### 2. Module-by-module sensitivity analysis [1 point]
 [Start here](https://pytorch.org/blog/quantization-in-practice/#sensitivity-analysis).
